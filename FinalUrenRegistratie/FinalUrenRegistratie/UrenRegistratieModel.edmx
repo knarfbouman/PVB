@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UrenregistratieModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="UrenregistratieModelStoreContainer">
+          <EntitySet Name="Projecten" EntityType="UrenregistratieModel.Store.Projecten" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="UrenregistratieModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Taken" EntityType="UrenregistratieModel.Store.Taken" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Uren" EntityType="UrenregistratieModel.Store.Uren" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="UrenregistratieModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersProjectenLijst" EntityType="UrenregistratieModel.Store.UsersProjectenLijst" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Taken_Projecten" Association="UrenregistratieModel.Store.FK_Taken_Projecten">
+            <End Role="Projecten" EntitySet="Projecten" />
+            <End Role="Taken" EntitySet="Taken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uren_UsersProjectenLijst" Association="UrenregistratieModel.Store.FK_Uren_UsersProjectenLijst">
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+            <End Role="Uren" EntitySet="Uren" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjectenLijst_Projecten" Association="UrenregistratieModel.Store.FK_UsersProjectenLijst_Projecten">
+            <End Role="Projecten" EntitySet="Projecten" />
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjectenLijst_Taken" Association="UrenregistratieModel.Store.FK_UsersProjectenLijst_Taken">
+            <End Role="Taken" EntitySet="Taken" />
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjectenLijst_Users" Association="UrenregistratieModel.Store.FK_UsersProjectenLijst_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Projecten">
+          <Key>
+            <PropertyRef Name="projectId" />
+          </Key>
+          <Property Name="projectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projectNaam" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="projectOmschrijving" Type="varchar(max)" Nullable="false" />
+          <Property Name="beginDatum" Type="datetime" Nullable="false" />
+          <Property Name="eindDatum" Type="datetime" />
+          <Property Name="afgesloten" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Taken">
+          <Key>
+            <PropertyRef Name="takenId" />
+          </Key>
+          <Property Name="takenId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projectId" Type="int" Nullable="false" />
+          <Property Name="taak" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="taakOmschrijving" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uren">
+          <Key>
+            <PropertyRef Name="urenId" />
+          </Key>
+          <Property Name="urenId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userProjectId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="projectId" Type="int" Nullable="false" />
+          <Property Name="takenId" Type="int" Nullable="false" />
+          <Property Name="datum" Type="datetime" Nullable="false" />
+          <Property Name="uren" Type="int" Nullable="false" />
+          <Property Name="urenVerantwoording" Type="varchar" Nullable="false" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="voornaam" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="achternaam" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="gebruikersnaam" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="wachtwoord" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="permissie" Type="nchar" Nullable="false" MaxLength="15" />
+          <Property Name="foto" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UsersProjectenLijst">
+          <Key>
+            <PropertyRef Name="userProjectId" />
+            <PropertyRef Name="projectId" />
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="takenId" />
+          </Key>
+          <Property Name="userProjectId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projectId" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="takenId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Taken_Projecten">
+          <End Role="Projecten" Type="UrenregistratieModel.Store.Projecten" Multiplicity="1" />
+          <End Role="Taken" Type="UrenregistratieModel.Store.Taken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projecten">
+              <PropertyRef Name="projectId" />
+            </Principal>
+            <Dependent Role="Taken">
+              <PropertyRef Name="projectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uren_UsersProjectenLijst">
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.Store.UsersProjectenLijst" Multiplicity="1" />
+          <End Role="Uren" Type="UrenregistratieModel.Store.Uren" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersProjectenLijst">
+              <PropertyRef Name="userProjectId" />
+              <PropertyRef Name="projectId" />
+              <PropertyRef Name="userId" />
+              <PropertyRef Name="takenId" />
+            </Principal>
+            <Dependent Role="Uren">
+              <PropertyRef Name="userProjectId" />
+              <PropertyRef Name="projectId" />
+              <PropertyRef Name="userId" />
+              <PropertyRef Name="takenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjectenLijst_Projecten">
+          <End Role="Projecten" Type="UrenregistratieModel.Store.Projecten" Multiplicity="1" />
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.Store.UsersProjectenLijst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projecten">
+              <PropertyRef Name="projectId" />
+            </Principal>
+            <Dependent Role="UsersProjectenLijst">
+              <PropertyRef Name="projectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjectenLijst_Taken">
+          <End Role="Taken" Type="UrenregistratieModel.Store.Taken" Multiplicity="1" />
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.Store.UsersProjectenLijst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taken">
+              <PropertyRef Name="takenId" />
+            </Principal>
+            <Dependent Role="UsersProjectenLijst">
+              <PropertyRef Name="takenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjectenLijst_Users">
+          <End Role="Users" Type="UrenregistratieModel.Store.Users" Multiplicity="1" />
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.Store.UsersProjectenLijst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="UsersProjectenLijst">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UrenregistratieModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="UrenregistratieEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Projecten" EntityType="UrenregistratieModel.Projecten" />
+          <EntitySet Name="sysdiagrams" EntityType="UrenregistratieModel.sysdiagrams" />
+          <EntitySet Name="Taken" EntityType="UrenregistratieModel.Taken" />
+          <EntitySet Name="Uren" EntityType="UrenregistratieModel.Uren" />
+          <EntitySet Name="Users" EntityType="UrenregistratieModel.Users" />
+          <EntitySet Name="UsersProjectenLijst" EntityType="UrenregistratieModel.UsersProjectenLijst" />
+          <AssociationSet Name="FK_Taken_Projecten" Association="UrenregistratieModel.FK_Taken_Projecten">
+            <End Role="Projecten" EntitySet="Projecten" />
+            <End Role="Taken" EntitySet="Taken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjectenLijst_Projecten" Association="UrenregistratieModel.FK_UsersProjectenLijst_Projecten">
+            <End Role="Projecten" EntitySet="Projecten" />
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjectenLijst_Taken" Association="UrenregistratieModel.FK_UsersProjectenLijst_Taken">
+            <End Role="Taken" EntitySet="Taken" />
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uren_UsersProjectenLijst" Association="UrenregistratieModel.FK_Uren_UsersProjectenLijst">
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+            <End Role="Uren" EntitySet="Uren" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProjectenLijst_Users" Association="UrenregistratieModel.FK_UsersProjectenLijst_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersProjectenLijst" EntitySet="UsersProjectenLijst" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Projecten">
+          <Key>
+            <PropertyRef Name="projectId" />
+          </Key>
+          <Property Name="projectId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projectNaam" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="projectOmschrijving" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="beginDatum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="eindDatum" Type="DateTime" Precision="3" />
+          <Property Name="afgesloten" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Taken" Relationship="UrenregistratieModel.FK_Taken_Projecten" FromRole="Projecten" ToRole="Taken" />
+          <NavigationProperty Name="UsersProjectenLijst" Relationship="UrenregistratieModel.FK_UsersProjectenLijst_Projecten" FromRole="Projecten" ToRole="UsersProjectenLijst" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Taken">
+          <Key>
+            <PropertyRef Name="takenId" />
+          </Key>
+          <Property Name="takenId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projectId" Type="Int32" Nullable="false" />
+          <Property Name="taak" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="taakOmschrijving" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Projecten" Relationship="UrenregistratieModel.FK_Taken_Projecten" FromRole="Taken" ToRole="Projecten" />
+          <NavigationProperty Name="UsersProjectenLijst" Relationship="UrenregistratieModel.FK_UsersProjectenLijst_Taken" FromRole="Taken" ToRole="UsersProjectenLijst" />
+        </EntityType>
+        <EntityType Name="Uren">
+          <Key>
+            <PropertyRef Name="urenId" />
+          </Key>
+          <Property Name="urenId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="userProjectId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="projectId" Type="Int32" Nullable="false" />
+          <Property Name="takenId" Type="Int32" Nullable="false" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="uren1" Type="Int32" Nullable="false" />
+          <Property Name="urenVerantwoording" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="UsersProjectenLijst" Relationship="UrenregistratieModel.FK_Uren_UsersProjectenLijst" FromRole="Uren" ToRole="UsersProjectenLijst" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="voornaam" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="achternaam" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="gebruikersnaam" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="wachtwoord" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="permissie" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+          <Property Name="foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="UsersProjectenLijst" Relationship="UrenregistratieModel.FK_UsersProjectenLijst_Users" FromRole="Users" ToRole="UsersProjectenLijst" />
+        </EntityType>
+        <EntityType Name="UsersProjectenLijst">
+          <Key>
+            <PropertyRef Name="userProjectId" />
+            <PropertyRef Name="projectId" />
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="takenId" />
+          </Key>
+          <Property Name="userProjectId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projectId" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="takenId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Projecten" Relationship="UrenregistratieModel.FK_UsersProjectenLijst_Projecten" FromRole="UsersProjectenLijst" ToRole="Projecten" />
+          <NavigationProperty Name="Taken" Relationship="UrenregistratieModel.FK_UsersProjectenLijst_Taken" FromRole="UsersProjectenLijst" ToRole="Taken" />
+          <NavigationProperty Name="Uren" Relationship="UrenregistratieModel.FK_Uren_UsersProjectenLijst" FromRole="UsersProjectenLijst" ToRole="Uren" />
+          <NavigationProperty Name="Users" Relationship="UrenregistratieModel.FK_UsersProjectenLijst_Users" FromRole="UsersProjectenLijst" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_Taken_Projecten">
+          <End Role="Projecten" Type="UrenregistratieModel.Projecten" Multiplicity="1" />
+          <End Role="Taken" Type="UrenregistratieModel.Taken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projecten">
+              <PropertyRef Name="projectId" />
+            </Principal>
+            <Dependent Role="Taken">
+              <PropertyRef Name="projectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjectenLijst_Projecten">
+          <End Role="Projecten" Type="UrenregistratieModel.Projecten" Multiplicity="1" />
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.UsersProjectenLijst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projecten">
+              <PropertyRef Name="projectId" />
+            </Principal>
+            <Dependent Role="UsersProjectenLijst">
+              <PropertyRef Name="projectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjectenLijst_Taken">
+          <End Role="Taken" Type="UrenregistratieModel.Taken" Multiplicity="1" />
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.UsersProjectenLijst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Taken">
+              <PropertyRef Name="takenId" />
+            </Principal>
+            <Dependent Role="UsersProjectenLijst">
+              <PropertyRef Name="takenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uren_UsersProjectenLijst">
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.UsersProjectenLijst" Multiplicity="1" />
+          <End Role="Uren" Type="UrenregistratieModel.Uren" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersProjectenLijst">
+              <PropertyRef Name="userProjectId" />
+              <PropertyRef Name="projectId" />
+              <PropertyRef Name="userId" />
+              <PropertyRef Name="takenId" />
+            </Principal>
+            <Dependent Role="Uren">
+              <PropertyRef Name="userProjectId" />
+              <PropertyRef Name="projectId" />
+              <PropertyRef Name="userId" />
+              <PropertyRef Name="takenId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProjectenLijst_Users">
+          <End Role="Users" Type="UrenregistratieModel.Users" Multiplicity="1" />
+          <End Role="UsersProjectenLijst" Type="UrenregistratieModel.UsersProjectenLijst" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="UsersProjectenLijst">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UrenregistratieModelStoreContainer" CdmEntityContainer="UrenregistratieEntities">
+          <EntitySetMapping Name="Projecten">
+            <EntityTypeMapping TypeName="UrenregistratieModel.Projecten">
+              <MappingFragment StoreEntitySet="Projecten">
+                <ScalarProperty Name="projectId" ColumnName="projectId" />
+                <ScalarProperty Name="projectNaam" ColumnName="projectNaam" />
+                <ScalarProperty Name="projectOmschrijving" ColumnName="projectOmschrijving" />
+                <ScalarProperty Name="beginDatum" ColumnName="beginDatum" />
+                <ScalarProperty Name="eindDatum" ColumnName="eindDatum" />
+                <ScalarProperty Name="afgesloten" ColumnName="afgesloten" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="UrenregistratieModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taken">
+            <EntityTypeMapping TypeName="UrenregistratieModel.Taken">
+              <MappingFragment StoreEntitySet="Taken">
+                <ScalarProperty Name="takenId" ColumnName="takenId" />
+                <ScalarProperty Name="projectId" ColumnName="projectId" />
+                <ScalarProperty Name="taak" ColumnName="taak" />
+                <ScalarProperty Name="taakOmschrijving" ColumnName="taakOmschrijving" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uren">
+            <EntityTypeMapping TypeName="UrenregistratieModel.Uren">
+              <MappingFragment StoreEntitySet="Uren">
+                <ScalarProperty Name="urenId" ColumnName="urenId" />
+                <ScalarProperty Name="userProjectId" ColumnName="userProjectId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="projectId" ColumnName="projectId" />
+                <ScalarProperty Name="takenId" ColumnName="takenId" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="uren1" ColumnName="uren" />
+                <ScalarProperty Name="urenVerantwoording" ColumnName="urenVerantwoording" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="UrenregistratieModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="voornaam" ColumnName="voornaam" />
+                <ScalarProperty Name="achternaam" ColumnName="achternaam" />
+                <ScalarProperty Name="gebruikersnaam" ColumnName="gebruikersnaam" />
+                <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+                <ScalarProperty Name="permissie" ColumnName="permissie" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersProjectenLijst">
+            <EntityTypeMapping TypeName="UrenregistratieModel.UsersProjectenLijst">
+              <MappingFragment StoreEntitySet="UsersProjectenLijst">
+                <ScalarProperty Name="userProjectId" ColumnName="userProjectId" />
+                <ScalarProperty Name="projectId" ColumnName="projectId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="takenId" ColumnName="takenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
