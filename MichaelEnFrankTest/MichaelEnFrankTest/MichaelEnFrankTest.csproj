@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="frank.aspx" />
+    <Content Include="home.aspx" />
     <Content Include="michael.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -68,6 +69,13 @@
     </Compile>
     <Compile Include="frank.aspx.designer.cs">
       <DependentUpon>frank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="michael.aspx.cs">
       <DependentUpon>michael.aspx</DependentUpon>
