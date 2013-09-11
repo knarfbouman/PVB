@@ -14,7 +14,7 @@
         <img id="logo" src="Images/FcTwente.jpg" alt="Logo Twente" />
         <label id="naam">Test Michael en Frank</label>
     </div>
-    <div id="menubar">
+    <div id="menubar" style="background-color:Background">
         <a href="Home.aspx">Home</a><br />
         <a href="Frank.aspx">Frank</a><br />
         <a href="Michael.aspx">Michael</a>
