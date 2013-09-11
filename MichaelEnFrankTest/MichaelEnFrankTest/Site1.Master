@@ -10,8 +10,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="header">
-        <img id="logo" src="../FcTwente.jpg" alt="Logo Muziekwinkel" />
+        <div id="header" style="background-color:Background">
+        <img id="logo" src="Images/FcTwente.jpg" alt="Logo Twente" />
         <label id="naam">Test Michael en Frank</label>
     </div>
     <div id="menubar">
