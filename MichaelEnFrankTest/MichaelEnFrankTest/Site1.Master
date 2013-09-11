@@ -16,8 +16,8 @@
     </div>
     <div id="menubar">
         <a href="Home.aspx">Home</a><br />
-        <a href="Opdracht4.aspx">Frank</a><br />
-        <a href="Opdracht5.aspx">Michael</a>
+        <a href="Frank.aspx">Frank</a><br />
+        <a href="Michael.aspx">Michael</a>
 
     </div>
 
