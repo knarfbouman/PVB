@@ -13,5 +13,12 @@ namespace MichaelEnFrankTest
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            int teller = rand.Next();
+            Response.Write(teller);
+        }
     }
 }
