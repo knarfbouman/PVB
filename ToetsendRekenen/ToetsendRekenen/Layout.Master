@@ -12,13 +12,9 @@
 <body>
     <form id="form1" runat="server">
     <div id="header">
-            <<img id="logo" src="Images/logo.jpg" alt="Logo Muziekwinkel" />
-        <label id="naam">Lerend rekenen</label>
-
-
-
-        </div>
-
+    <img id="logo" src="Images/logo.jpg" alt="Logo Muziekwinkel" />
+    <label id="naam">Lerend rekenen</label>
+    </div>
 
 
 
