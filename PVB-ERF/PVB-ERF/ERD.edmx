@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Model.Store.Admin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categorieën" EntityType="Model.Store.Categorieën" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IMAGES" EntityType="Model.Store.IMAGES" store:Type="Tables" store:Schema="dbo" store:Name="IMAGES">
+            <DefiningQuery>SELECT 
+      [IMAGES].[ImageName] AS [ImageName], 
+      [IMAGES].[ImageBinary] AS [ImageBinary]
+      FROM [dbo].[IMAGES] AS [IMAGES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Sessies" EntityType="Model.Store.Sessies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subcategorieën" EntityType="Model.Store.Subcategorieën" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Subcategorieën_Categorieën" Association="Model.Store.FK_Subcategorieën_Categorieën">
+            <End Role="Categorieën" EntitySet="Categorieën" />
+            <End Role="Subcategorieën" EntitySet="Subcategorieën" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Gebruikersnaam" />
+          </Key>
+          <Property Name="Gebruikersnaam" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Wachtwoord" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Categorieën">
+          <Key>
+            <PropertyRef Name="CategorieID" />
+          </Key>
+          <Property Name="CategorieID" Type="int" Nullable="false" />
+          <Property Name="Categorienaam" Type="varchar" MaxLength="50" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'PVB MOF ERD.dbo.IMAGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="IMAGES">
+          <Key>
+            <PropertyRef Name="ImageName" />
+            <PropertyRef Name="ImageBinary" />
+          </Key>
+          <Property Name="ImageName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImageBinary" Type="binary" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Sessies">
+          <Key>
+            <PropertyRef Name="Datum" />
+          </Key>
+          <Property Name="Datum" Type="date" Nullable="false" />
+          <Property Name="Aantal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcategorieën">
+          <Key>
+            <PropertyRef Name="SubcategorieID" />
+          </Key>
+          <Property Name="SubcategorieID" Type="int" Nullable="false" />
+          <Property Name="CategorieID" Type="int" Nullable="false" />
+          <Property Name="Subcategorienaam" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="Datum" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Subcategorieën_Categorieën">
+          <End Role="Categorieën" Type="Model.Store.Categorieën" Multiplicity="1" />
+          <End Role="Subcategorieën" Type="Model.Store.Subcategorieën" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorieën">
+              <PropertyRef Name="CategorieID" />
+            </Principal>
+            <Dependent Role="Subcategorieën">
+              <PropertyRef Name="CategorieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PVB_MOF_ERDEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin" EntityType="Model.Admin" />
+          <EntitySet Name="Categorieën" EntityType="Model.Categorieën" />
+          <EntitySet Name="Sessies" EntityType="Model.Sessies" />
+          <EntitySet Name="Subcategorieën" EntityType="Model.Subcategorieën" />
+          <AssociationSet Name="FK_Subcategorieën_Categorieën" Association="Model.FK_Subcategorieën_Categorieën">
+            <End Role="Categorieën" EntitySet="Categorieën" />
+            <End Role="Subcategorieën" EntitySet="Subcategorieën" />
+          </AssociationSet>
+          <EntitySet Name="IMAGES" EntityType="Model.Images" />
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Gebruikersnaam" />
+          </Key>
+          <Property Type="String" Name="Gebruikersnaam" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Wachtwoord" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Categorieën">
+          <Key>
+            <PropertyRef Name="CategorieID" />
+          </Key>
+          <Property Type="Int32" Name="CategorieID" Nullable="false" />
+          <Property Type="String" Name="Categorienaam" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <Property Type="DateTime" Name="Datum" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Subcategorieën" Relationship="Model.FK_Subcategorieën_Categorieën" FromRole="Categorieën" ToRole="Subcategorieën" />
+        </EntityType>
+        <EntityType Name="Sessies">
+          <Key>
+            <PropertyRef Name="Datum" />
+          </Key>
+          <Property Type="DateTime" Name="Datum" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="Aantal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcategorieën">
+          <Key>
+            <PropertyRef Name="SubcategorieID" />
+          </Key>
+          <Property Type="Int32" Name="SubcategorieID" Nullable="false" />
+          <Property Type="Int32" Name="CategorieID" Nullable="false" />
+          <Property Type="String" Name="Subcategorienaam" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <Property Type="DateTime" Name="Datum" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Categorieën" Relationship="Model.FK_Subcategorieën_Categorieën" FromRole="Subcategorieën" ToRole="Categorieën" />
+        </EntityType>
+        <Association Name="FK_Subcategorieën_Categorieën">
+          <End Type="Model.Categorieën" Role="Categorieën" Multiplicity="1" />
+          <End Type="Model.Subcategorieën" Role="Subcategorieën" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorieën">
+              <PropertyRef Name="CategorieID" />
+            </Principal>
+            <Dependent Role="Subcategorieën">
+              <PropertyRef Name="CategorieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="ImageName" />
+            <PropertyRef Name="ImageBinary" />
+          </Key>
+          <Property Type="String" Name="ImageName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="ImageBinary" Nullable="false" MaxLength="25" FixedLength="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="PVB_MOF_ERDEntities">
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="Model.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Wachtwoord" ColumnName="Wachtwoord" />
+                <ScalarProperty Name="Gebruikersnaam" ColumnName="Gebruikersnaam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorieën">
+            <EntityTypeMapping TypeName="Model.Categorieën">
+              <MappingFragment StoreEntitySet="Categorieën">
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Categorienaam" ColumnName="Categorienaam" />
+                <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sessies">
+            <EntityTypeMapping TypeName="Model.Sessies">
+              <MappingFragment StoreEntitySet="Sessies">
+                <ScalarProperty Name="Aantal" ColumnName="Aantal" />
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subcategorieën">
+            <EntityTypeMapping TypeName="Model.Subcategorieën">
+              <MappingFragment StoreEntitySet="Subcategorieën">
+                <ScalarProperty Name="Datum" ColumnName="Datum" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Subcategorienaam" ColumnName="Subcategorienaam" />
+                <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
+                <ScalarProperty Name="SubcategorieID" ColumnName="SubcategorieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMAGES">
+            <EntityTypeMapping TypeName="Model.Images">
+              <MappingFragment StoreEntitySet="IMAGES">
+                <ScalarProperty Name="ImageBinary" ColumnName="ImageBinary" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

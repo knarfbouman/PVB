@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PVB_ERF.Optellen">
+    <Position X="0.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQCAAAAAAAAAAAAAAAAAAAAEQAAAACAAMAAAAAAQ=</HashCode>
+      <FileName>Optellen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Aftellen">
+    <Position X="2.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAACABAAAACAAAAAAAAAAAAAEQAAAAAAAMAAAAAAQ=</HashCode>
+      <FileName>Aftellen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Vermenigvuldigen">
+    <Position X="4.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAgAEAAAAAAAAAAAAAAAAEQAAAIAAAMAAAAAAQ=</HashCode>
+      <FileName>Vermenigvuldigen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Delen">
+    <Position X="6.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAAAAAkAAAAAAAAAAAAAAEQAAAAAAAMAAAAAAQ=</HashCode>
+      <FileName>Delen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.MixedSommen">
+    <Position X="8.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAIAAQAAAAAAAAEQAAAAAAAMgAAAAAQ=</HashCode>
+      <FileName>MixedSommen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Getallenlijn">
+    <Position X="0.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAYACAAAAAAAAIAAQAAAAAACAEAAAAAAAAMgAAIgAA=</HashCode>
+      <FileName>Getallenlijn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Breuken">
+    <Position X="2.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAYACAAAAAAAAIAAQAAAAAACAEAAAAAAAAMgAAIgAA=</HashCode>
+      <FileName>Class1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Supermarkt">
+    <Position X="4.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQACCAAgAAAIAAAAAAAEAAAAAAAAgAAEAAAAAAAAA=</HashCode>
+      <FileName>Supermarkt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Klok">
+    <Position X="6.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAYABQAAAAABAIIAgAAAACAMgAAAAAA=</HashCode>
+      <FileName>Klok.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Procenten">
+    <Position X="8.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAUAACAIAAAgAAIAAQAAAAAAAAAACAAAAAAMgAAAACA=</HashCode>
+      <FileName>Procenten.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Vierkantemeter">
+    <Position X="0.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vierkantemeter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Afronden">
+    <Position X="2.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAIAAQAAAAAAAAABAAQAACAEgAIAIAA=</HashCode>
+      <FileName>Afronden.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Sessie">
+    <Position X="4.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sessie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

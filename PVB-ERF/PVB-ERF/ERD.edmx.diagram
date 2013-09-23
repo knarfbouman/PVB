@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e787312ac06c42238320824c20800dde" Name="Diagram1" ZoomLevel="118">
+        <EntityTypeShape EntityType="Model.Admin" Width="1.5" PointX="12.125" PointY="16.375" />
+        <EntityTypeShape EntityType="Model.Categorieën" Width="1.5" PointX="14" PointY="18" />
+        <EntityTypeShape EntityType="Model.Sessies" Width="1.5" PointX="14" PointY="16.375" />
+        <EntityTypeShape EntityType="Model.Subcategorieën" Width="1.5" PointX="12.125" PointY="18" />
+        <AssociationConnector Association="Model.FK_Subcategorieën_Categorieën" />
+        <EntityTypeShape EntityType="Model.Images" Width="1.5" PointX="15.875" PointY="16.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
