@@ -8,5 +8,13 @@ namespace PVB_ERF
 {
     public class Vierkantemeter
     {
+        private int lengte;
+        private int breedte;
+        private int oppervlaktemaat;
+
+        public void CreateSurface()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

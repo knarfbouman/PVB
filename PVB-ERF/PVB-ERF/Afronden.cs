@@ -9,6 +9,9 @@ namespace PVB_ERF
     public class Afronden
     {
         private int eersteCijfer;
+        private int tweedeCijfer;
+        private int derdeCijfer;
+        private int uitkomst;
     
         public void MakkelijkHeleGetallen()
         {

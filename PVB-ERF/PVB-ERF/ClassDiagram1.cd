@@ -73,14 +73,14 @@
   <Class Name="PVB_ERF.Vierkantemeter">
     <Position X="0.5" Y="7.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAABAAAEAAAA=</HashCode>
       <FileName>Vierkantemeter.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PVB_ERF.Afronden">
     <Position X="2.5" Y="7.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAIAAQAAAAAAAAABAAQAACAEgAIAIAA=</HashCode>
+      <HashCode>AAAAACCAAAAAAAIAAQAAAAAAAAABAAQAACAMgAIAIAQ=</HashCode>
       <FileName>Afronden.cs</FileName>
     </TypeIdentifier>
   </Class>
