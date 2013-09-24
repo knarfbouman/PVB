@@ -91,5 +91,12 @@
       <FileName>Sessie.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="PVB_ERF.AdminLogin">
+    <Position X="6.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAgAAAAAAAAAEAAAAAAAEAAAAQAAAAAAA=</HashCode>
+      <FileName>AdminLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
