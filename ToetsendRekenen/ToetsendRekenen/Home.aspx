@@ -16,7 +16,6 @@
             <div id="ButtonRow3">
             <asp:Button ID="Opdracht7" runat="server" Text="Opdracht 7" />
             <asp:Button ID="Opdracht8" runat="server" Text="Opdracht 8" />
-            <asp:Button ID="Opdracht9" runat="server" Text="Opdracht 9" />
             </div>
 
             
