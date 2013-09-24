@@ -18,21 +18,22 @@
 
 <script>
     $(function () {
+        var valMap = [0, 10, 100, 1000, 10000, 100000];
         $("#slider-range").slider({
             range: true,
             min: 0,
-            max: 500,
-            values: [75, 300],
+            max: valMap.length - 1,
+            values: [0, 100],
             slide: function (event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                $("#amount").val(valMap[ui.values[0]] + " - " + valMap[ui.values[1]]);
             }
         });
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-        " - $" + $("#slider-range").slider("values", 1));
+        $("#amount").val(valMap[$("#slider-range").slider("values", 0)] +
+        " - " + valMap[$("#slider-range").slider("values", 1)]);
     });
 </script>
 <p>
-<label for="amount">Price range:</label>
+<label for="amount">Getallenbereik: </label>
 <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
 </p>
 <div id="slider-range"></div>   
