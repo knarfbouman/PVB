@@ -262,6 +262,7 @@
       <DependentUpon>ERD.tt</DependentUpon>
     </Compile>
     <Compile Include="AdminLogin.cs" />
+    <Compile Include="Afbeelding.cs" />
     <Compile Include="Afronden.cs" />
     <Compile Include="Aftellen.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
