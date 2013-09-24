@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Layout.css" />
     <Content Include="Home.aspx" />
+    <Content Include="Opdracht1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Layout.Master.cs">
@@ -75,6 +76,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Opdracht1.aspx.cs">
+      <DependentUpon>Opdracht1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Opdracht1.aspx.designer.cs">
+      <DependentUpon>Opdracht1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
