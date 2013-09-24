@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Jquery\inhoud.css" />
     <Content Include="Jquery\jquery.ui.slider.css" />
     <Content Include="Jquery\jquery.1.10.2.min.js" />
     <Content Include="Jquery\jquery.ui.slider.js" />
