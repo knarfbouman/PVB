@@ -57,6 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Jquery\jquery.ui.slider.css" />
+    <Content Include="Jquery\jquery.1.10.2.min.js" />
+    <Content Include="Jquery\jquery.ui.slider.js" />
     <Content Include="Layout.css" />
     <Content Include="Home.aspx" />
     <Content Include="Opdracht1.aspx" />
@@ -90,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Javascript\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
