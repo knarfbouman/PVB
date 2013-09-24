@@ -6,9 +6,9 @@ using System.ComponentModel;
 
 namespace PVB_ERF
 {
-    public class Sessie
+    public class Image
     {
-        public int SessionID
+        public int ImageID
         {
             get
             {
@@ -19,7 +19,7 @@ namespace PVB_ERF
             }
         }
 
-        public int Datum
+        public int ImageName
         {
             get
             {
@@ -30,7 +30,7 @@ namespace PVB_ERF
             }
         }
     
-        public void SessionCreate()
+        public void ImageConvert()
         {
             throw new System.NotImplementedException();
         }

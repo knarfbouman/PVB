@@ -87,7 +87,7 @@
   <Class Name="PVB_ERF.Sessie">
     <Position X="4.5" Y="7.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAIAAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sessie.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -96,6 +96,13 @@
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAgAAAAAAAAAEAAAAAAAEAAAAQAAAAAAA=</HashCode>
       <FileName>AdminLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Image">
+    <Position X="8.5" Y="7.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Afbeelding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
