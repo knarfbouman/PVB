@@ -19,7 +19,7 @@
             </div>
 
             <div id="Tekst">
-                <asp:Label ID="Label1" runat="server" Text="Hier komt het verhaal te staan over deze site"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Hier komt het verhaal te staan over deze site :)"></asp:Label>
             </div>
     
 </asp:Content>
