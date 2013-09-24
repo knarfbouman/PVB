@@ -16,22 +16,9 @@
     <label id="naam">Lerend rekenen</label>
     </div>
 
-
-
-
-
     <div id="content">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-            <asp:Button ID="Opdracht1" runat="server" Text="Opdracht 1" />
-            <asp:Button ID="Opdracht2" runat="server" Text="Opdracht 2" />
-            <asp:Button ID="Opdracht3" runat="server" Text="Opdracht 3" />
-            <asp:Button ID="Opdracht4" runat="server" Text="Opdracht 4" />
-            <asp:Button ID="Opdracht5" runat="server" Text="Opdracht 5" />
-            <asp:Button ID="Opdracht6" runat="server" Text="Opdracht 6" />
-            <asp:Button ID="Opdracht7" runat="server" Text="Opdracht 7" />
-            <asp:Button ID="Opdracht8" runat="server" Text="Opdracht 8" />
-            <asp:Button ID="Opdracht9" runat="server" Text="Opdracht 9" />
+
         </asp:ContentPlaceHolder>
     </div>
     </form>
