@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:CheckBoxList ID="CheckBoxList1" runat="server" Height="126px" Width="70px">
+    <asp:CheckBoxList ID="CheckBoxList1" runat="server"  Height="126px" Width="139px">
         <asp:ListItem>Plus</asp:ListItem>
         <asp:ListItem>Min</asp:ListItem>
         <asp:ListItem>Keer</asp:ListItem>
