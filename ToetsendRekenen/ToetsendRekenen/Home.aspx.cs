@@ -13,5 +13,10 @@ namespace ToetsendRekenen
         {
 
         }
+
+        protected void Opdracht1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/opdracht1.aspx");
+        }
     }
 }
