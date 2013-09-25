@@ -7,15 +7,28 @@
     <link href="Jquery/inhoud.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:TextBox ID="headerradiobutton" runat="server" Font-Size="25" BorderStyle="None" Text="Sommen"></asp:TextBox>   
-    <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="119px" Width="98px">
-        <asp:ListItem>Plus</asp:ListItem>
-        <asp:ListItem>Min</asp:ListItem>
-        <asp:ListItem>Keer</asp:ListItem>
-        <asp:ListItem>Deel</asp:ListItem>
-        <asp:ListItem>Gemixed</asp:ListItem>
+    <div id ="headeropdracht" >
+<asp:Label ID="opdrachtlbl" runat="server" Font-Size="25" Text="Opdracht#" ></asp:Label>
+    
+     </div>
+   
+    
+      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="24%" style="margin-left: 0px">
+        <asp:ListItem>test</asp:ListItem>
+        <asp:ListItem>test</asp:ListItem>
+        <asp:ListItem>test</asp:ListItem>
+        <asp:ListItem>test</asp:ListItem>
+        <asp:ListItem>test</asp:ListItem>
     </asp:RadioButtonList>
-
+  
+    <asp:RadioButtonList ID="MoeilijkheidsGraad" runat="server" Width="406px" RepeatDirection="Horizontal">
+        <asp:ListItem>Makkelijk</asp:ListItem>
+        <asp:ListItem>Normaal</asp:ListItem>
+        <asp:ListItem>Moeilijk</asp:ListItem>
+    </asp:RadioButtonList>
+        
+    <div id="slider-range">
+    </div>
 <script>
     $(function () {
         var valMap = [0, 10, 100, 1000, 10000, 100000];
@@ -34,8 +47,7 @@
 </script>
 <p>
 <label for="amount">Getallenbereik: </label>
-<input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" />
+<input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" readonly="true" />
 </p>
-<div id="slider-range"></div>   
-
-</asp:Content>
+  
+    </asp:Content>

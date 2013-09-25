@@ -35,7 +35,7 @@
     height:880px;
     background-color:white;
     margin: auto;
-    
+
 }
 
 #ButtonRow1 
@@ -66,6 +66,7 @@
     margin-top:100px;
     width:100px;
     height:100px;
+    border-radius:20px;
 }
 
 .Button:active {
@@ -79,4 +80,38 @@
     margin-top:60%;
 }
 
+#Login {
+    background-color:#4B0083;
+    position:absolute;
+    margin-left:17%; 
+    margin-top:15%;
+    padding:5%;
+    color:white;
+    font-family:Calibri;
+    border-style:solid;
+    border-radius:50px;
+    border-color:black;
+}
 
+#Password {
+    margin-top:15px;
+}
+
+#ButtonLogin {
+    text-align:right;
+    margin-top:15px;
+}
+
+.ButtonLogin {
+    width:156px;
+    height:50px;
+    border-radius:15px;
+}
+
+.lblPassword {
+    margin-right:24px;
+}
+
+.lblUsername {
+    margin-right:20px;
+}

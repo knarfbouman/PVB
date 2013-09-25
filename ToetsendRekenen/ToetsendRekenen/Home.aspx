@@ -9,13 +9,13 @@
             <asp:Button ID="Opdracht3" runat="server" Text="Opdracht 3" CSSclass="Button"/>
             </div>
             <div id="ButtonRow2">
-            <asp:Button ID="Opdracht4" runat="server" Text="Opdracht 4" CSSclass="Button"/>
-            <asp:Button ID="Opdracht5" runat="server" Text="Opdracht 5" CSSclass="Button"/>
             <asp:Button ID="Opdracht6" runat="server" Text="Opdracht 6" CSSclass="Button"/>
-            </div>
-            <div id="ButtonRow3">
             <asp:Button ID="Opdracht7" runat="server" Text="Opdracht 7" CSSclass="Button"/>
             <asp:Button ID="Opdracht8" runat="server" Text="Opdracht 8" CSSclass="Button"/>
+            </div>
+            <div id="ButtonRow3">
+            <asp:Button ID="Opdracht4" runat="server" Text="Opdracht 4" CSSclass="Button"/>
+            <asp:Button ID="Opdracht5" runat="server" Text="Opdracht 5" CSSclass="Button"/>
             </div>
 
             <div id="Tekst">
