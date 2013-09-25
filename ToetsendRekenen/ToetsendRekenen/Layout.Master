@@ -12,7 +12,8 @@
 <body>
     <form id="form1" runat="server">
     <div id="header">
-    <img id="logo" src="Images/logo.jpg" alt="Logo Toetsend rekenen" />
+    <%--<img id="logo" src="Images/logo.jpg" alt="Logo Toetsend rekenen" />--%>
+    <a href="home.aspx"><img id="logo" src="Images/logo.jpg" /></a>
     <label id="naam">Toetsend rekenen</label>
     </div>
 

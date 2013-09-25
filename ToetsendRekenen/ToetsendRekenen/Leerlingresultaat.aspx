@@ -11,5 +11,5 @@
     <p>
         Dat betekent  dat je ##% hebt gehaald.
     </p>
-    <asp:Button ID="btnBack" runat="server" Text="Ga terug naar sommen" OnClick="btnBack_Click" />
+    <asp:Button ID="btnBack" runat="server" Text="Ga terug" OnClick="btnBack_Click" />
 </asp:Content>
