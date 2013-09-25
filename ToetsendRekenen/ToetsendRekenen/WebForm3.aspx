@@ -12,7 +12,9 @@
     <asp:Label ID="Label2" runat="server" Text="Password" CssClass="lblPassword"></asp:Label>
     <asp:TextBox ID="tbPassword" runat="server" CssClass="tbPasswordClass"></asp:TextBox>
     </div>
-        <asp:Button ID="Button1" runat="server" Text="Button" />
+    <div id="ButtonLogin">
+    <asp:Button ID="btnLogin" runat="server" Text="Log in" CssClass="ButtonLogin" />
+    </div>
     </div>
     
 </asp:Content>
