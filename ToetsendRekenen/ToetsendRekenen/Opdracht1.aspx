@@ -12,8 +12,8 @@
     
      </div>
    
-    <div id ="radiobuttons">
-      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="50%" style="margin-left: 0px">
+    
+      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="24%" style="margin-left: 0px">
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
@@ -26,7 +26,7 @@
         <asp:ListItem>Normaal</asp:ListItem>
         <asp:ListItem>Moeilijk</asp:ListItem>
     </asp:RadioButtonList>
-        </div>
+        
     <div id="slider-range">
     </div>
 <script>
