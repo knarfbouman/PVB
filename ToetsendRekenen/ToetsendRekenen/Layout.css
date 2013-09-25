@@ -82,9 +82,10 @@
 
 #Login {
     background-color:#4B0083;
-    position:absolute;
+    position:fixed;
     margin-left:17%; 
     margin-top:15%;
+    margin-right:17%;
     padding:5%;
     color:white;
     font-family:Calibri;
