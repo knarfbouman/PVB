@@ -11,6 +11,7 @@ namespace PVB_ERF
         private int eersteCijfer;
         private int tweedeCijfer;
         private int uitkomst;
+        private int aantalGoed;
     
         public void MakkelijkDecimalen()
         {

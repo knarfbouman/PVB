@@ -12,6 +12,7 @@ namespace PVB_ERF
         private int tweedeCijfer;
         private int derdeCijfer;
         private int uitkomst;
+        private int aantalGoed;
     
         public void MakkelijkHeleGetallen()
         {

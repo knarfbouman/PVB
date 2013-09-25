@@ -12,6 +12,7 @@ namespace PVB_ERF
         private int tweedeCijfer;
         private int uitkomstEersteCijfer;
         private int uitkomstTweedeCijfer;
+        private int aantalGoed;
     
         public void MakkelijkAnaloog()
         {
