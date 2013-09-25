@@ -2,6 +2,9 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="PVB_ERF.Optellen">
     <Position X="0.5" Y="1" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAQCAAAAAAAAAAAAAAAAAAAAEQAAAACAAMAAAAAAQ=</HashCode>
       <FileName>Optellen.cs</FileName>
@@ -103,6 +106,13 @@
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Afbeelding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PVB_ERF.Resultaat">
+    <Position X="0.5" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Resultaat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

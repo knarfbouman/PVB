@@ -8,9 +8,9 @@ namespace PVB_ERF
 {
     public class AdminLogin
     {
-        private int newPassword;
-        private int currentPassword;
-        private int username;
+        private string newPassword;
+        private string currentPassword;
+        private string username;
     
         public void Login()
         {
