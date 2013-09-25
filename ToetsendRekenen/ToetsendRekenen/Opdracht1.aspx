@@ -13,7 +13,7 @@
      </div>
    
     <div id ="radiobuttons">
-      <asp:RadioButtonList ID="RadioButtonList1" runat="server" Height="119px" Width="50%" style="margin-left: 0px">
+      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="50%" style="margin-left: 0px">
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
@@ -21,7 +21,7 @@
         <asp:ListItem>test</asp:ListItem>
     </asp:RadioButtonList>
   
-    <asp:RadioButtonList ID="RadioButtonList2" runat="server" Width="406px" RepeatDirection="Horizontal">
+    <asp:RadioButtonList ID="MoeilijkheidsGraad" runat="server" Width="406px" RepeatDirection="Horizontal">
         <asp:ListItem>Makkelijk</asp:ListItem>
         <asp:ListItem>Normaal</asp:ListItem>
         <asp:ListItem>Moeilijk</asp:ListItem>

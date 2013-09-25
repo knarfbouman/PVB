@@ -22,21 +22,21 @@ namespace ToetsendRekenen {
         protected global::System.Web.UI.WebControls.Label opdrachtlbl;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// SubCategorie control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.RadioButtonList SubCategorie;
         
         /// <summary>
-        /// RadioButtonList2 control.
+        /// MoeilijkheidsGraad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList2;
+        protected global::System.Web.UI.WebControls.RadioButtonList MoeilijkheidsGraad;
     }
 }
