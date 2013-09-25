@@ -70,7 +70,6 @@
       <BrowseToURL>~/MetSommenWerken.aspx</BrowseToURL>
     </Content>
     <Content Include="Leerlingresultaat.aspx" />
-    <Content Include="WebForm3.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Layout.Master.cs">
@@ -105,15 +104,6 @@
     <Compile Include="Leerlingresultaat.aspx.cs">
       <DependentUpon>Leerlingresultaat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Leerlingresultaat.aspx.designer.cs">
-      <DependentUpon>Leerlingresultaat.aspx</DependentUpon>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
