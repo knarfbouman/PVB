@@ -71,6 +71,7 @@
     </Content>
     <Content Include="Leerlingresultaat.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="AdminView.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Layout.Master.cs">
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView.aspx.cs">
+      <DependentUpon>AdminView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminView.aspx.designer.cs">
+      <DependentUpon>AdminView.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
