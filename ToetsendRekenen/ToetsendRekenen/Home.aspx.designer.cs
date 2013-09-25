@@ -40,24 +40,6 @@ namespace ToetsendRekenen {
         protected global::System.Web.UI.WebControls.Button Opdracht3;
         
         /// <summary>
-        /// Opdracht4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Opdracht4;
-        
-        /// <summary>
-        /// Opdracht5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Opdracht5;
-        
-        /// <summary>
         /// Opdracht6 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +65,24 @@ namespace ToetsendRekenen {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Opdracht8;
+        
+        /// <summary>
+        /// Opdracht4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Opdracht4;
+        
+        /// <summary>
+        /// Opdracht5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Opdracht5;
         
         /// <summary>
         /// Label1 control.
