@@ -13,22 +13,31 @@
      </div>
    
     
-      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="24%" style="margin-left: 0px">
+      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="100%" style="margin-left: 0px" Font-Size="X-Large">
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
     </asp:RadioButtonList>
-  
-    <asp:RadioButtonList ID="MoeilijkheidsGraad" runat="server" Width="406px" RepeatDirection="Horizontal">
+  <br /><br />
+<p>
+<label for="amount">Getallenbereik: </label>
+<input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" readonly="true" /></p>
+        
+    <div id="slider-range">
+    </div>
+    <br />
+    <p>
+    <asp:RadioButtonList ID="MoeilijkheidsGraad" runat="server" Width="818px" RepeatDirection="Horizontal" Font-Size="X-Large" Height="52px">
         <asp:ListItem>Makkelijk</asp:ListItem>
         <asp:ListItem>Normaal</asp:ListItem>
         <asp:ListItem>Moeilijk</asp:ListItem>
     </asp:RadioButtonList>
         
-    <div id="slider-range">
-    </div>
+    &nbsp;</p>
+  
+    <br /><br />
 <script>
     $(function () {
         var valMap = [0, 10, 100, 1000, 10000, 100000];
@@ -45,9 +54,5 @@
         " - " + valMap[$("#slider-range").slider("values", 1)]);
     });
 </script>
-<p>
-<label for="amount">Getallenbereik: </label>
-<input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" readonly="true" />
-</p>
   
     </asp:Content>
