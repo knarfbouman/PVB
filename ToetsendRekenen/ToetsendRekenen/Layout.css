@@ -9,6 +9,11 @@
     background-color:#4B0083;
     top:0;
     margin: auto;
+    border-style:solid;
+    border-color:#A5A4FF;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+    border-width: 8px 8px 8px 8px;
 }
 
 #logo 
@@ -16,7 +21,7 @@
     width:100px;
     height:80px;
     float:right;
-    padding-right:2%;
+    padding-right:10%;
 }
 
 #naam 
@@ -32,10 +37,14 @@
 #content
 {
     width:60%;
-    height:880px;
+    height:850px;
     background-color:white;
     margin: auto;
-
+    border-style:solid;
+    border-color:#A5A4FF;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+    border-width: 8px 8px 8px 8px;
 }
 
 #ButtonRow1 
