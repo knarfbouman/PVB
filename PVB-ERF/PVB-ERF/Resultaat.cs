@@ -6,9 +6,9 @@ using System.ComponentModel;
 
 namespace PVB_ERF
 {
-    public class Image
+    public class Resultaat
     {
-        public string ImageID
+        public int CategorieScore
         {
             get
             {
@@ -19,7 +19,7 @@ namespace PVB_ERF
             }
         }
 
-        public string ImageName
+        public int SubcategorieScore
         {
             get
             {
@@ -28,11 +28,6 @@ namespace PVB_ERF
             set
             {
             }
-        }
-    
-        public void ImageConvert()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

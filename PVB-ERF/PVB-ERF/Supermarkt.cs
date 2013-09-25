@@ -13,6 +13,7 @@ namespace PVB_ERF
         private int derdeProduct;
         private int vierdeProduct;
         private int uitkomst;
+        private int aantalGoed;
 
         public void MakkelijkRekenen()
         {
