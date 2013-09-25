@@ -93,20 +93,19 @@
     border-color:black;
 }
 
-#Username {
-
-}
-
 #Password {
-
+    margin-top:15px;
 }
 
-.tbPasswordClass {
-    
+#ButtonLogin {
+    text-align:right;
+    margin-top:15px;
 }
 
-.tbUsernameClass {
-
+.ButtonLogin {
+    width:156px;
+    height:50px;
+    border-radius:15px;
 }
 
 .lblPassword {
