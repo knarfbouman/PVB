@@ -58,12 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\banaan.jpg" />
-    <Content Include="Jquery\banaan.css" />
-    <Content Include="Jquery\inhoud.css" />
-    <Content Include="Jquery\jquery.ui.slider.css" />
-    <Content Include="Jquery\jquery.1.10.2.min.js" />
-    <Content Include="Jquery\jquery.ui.slider.js" />
-    <Content Include="Layout.css" />
+    <Content Include="Stylesheets\banaan.css" />
+    <Content Include="Stylesheets\inhoud.css" />
+    <Content Include="Stylesheets\Layout.css" />
     <Content Include="Home.aspx" />
     <Content Include="Opdracht1.aspx" />
     <Content Include="MetSommenWerken.aspx">
@@ -125,7 +122,9 @@
   <ItemGroup>
     <Content Include="Layout.Master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Jquery\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
     <None Include="web.Debug.config">
