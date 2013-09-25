@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\banaan.jpg" />
+    <Content Include="Jquery\banaan.css" />
     <Content Include="Jquery\inhoud.css" />
     <Content Include="Jquery\jquery.ui.slider.css" />
     <Content Include="Jquery\jquery.1.10.2.min.js" />
@@ -64,8 +66,11 @@
     <Content Include="Layout.css" />
     <Content Include="Home.aspx" />
     <Content Include="Opdracht1.aspx" />
-    <Content Include="AdminLogin.aspx" />
-    <Content Include="WebForm4.aspx" />
+    <Content Include="MetSommenWerken.aspx">
+      <BrowseToURL>~/MetSommenWerken.aspx</BrowseToURL>
+    </Content>
+    <Content Include="Leerlingresultaat.aspx" />
+    <Content Include="WebForm3.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Layout.Master.cs">
@@ -90,27 +95,31 @@
     <Compile Include="Opdracht1.aspx.designer.cs">
       <DependentUpon>Opdracht1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminLogin.aspx.cs">
-      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    <Compile Include="MetSommenWerken.aspx.cs">
+      <DependentUpon>MetSommenWerken.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminLogin.aspx.designer.cs">
-      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    <Compile Include="MetSommenWerken.aspx.designer.cs">
+      <DependentUpon>MetSommenWerken.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm4.aspx.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="Leerlingresultaat.aspx.cs">
+      <DependentUpon>Leerlingresultaat.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm4.aspx.designer.cs">
-      <DependentUpon>WebForm4.aspx</DependentUpon>
+    <Compile Include="Leerlingresultaat.aspx.designer.cs">
+      <DependentUpon>Leerlingresultaat.aspx</DependentUpon>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Layout.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="web.config" />
     <None Include="web.Debug.config">

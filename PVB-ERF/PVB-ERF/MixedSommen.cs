@@ -14,6 +14,7 @@ namespace PVB_ERF
         private int vierdeCijfer;
         private int vijfdeCijfer;
         private int uitkomst;
+        private int aantalGoed;
     
         public MarshalByRefObject MakkelijkMixed()
         {

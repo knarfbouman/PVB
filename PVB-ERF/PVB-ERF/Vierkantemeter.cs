@@ -10,7 +10,8 @@ namespace PVB_ERF
     {
         private int lengte;
         private int breedte;
-        private int oppervlaktemaat;
+        private string oppervlaktemaat;
+        private int aantalGoed;
 
         public void CreateSurface()
         {
