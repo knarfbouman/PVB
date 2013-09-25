@@ -6,10 +6,10 @@
         Resultaat
     </h1>
     <p>
-        Je hebt # van de 50 vragen goed beantwoord.
+        Je hebt # van de 50 vragen goed beantwoord en # van de 5 sterren behaald.
     </p> 
     <p>
-        Dat betekent  dat je ##% hebt gehaald.
+        Score: ##%
     </p>
     <asp:Button ID="btnBack" runat="server" Text="Ga terug" OnClick="btnBack_Click" />
 </asp:Content>
