@@ -8,6 +8,15 @@
 
     <script>
         $(function () {
+            var aantalGoed = 10;
+            if (aantalGoed = 10) {      
+                var img = document.createElement("img");
+                img.src = "Images/ster.jpg";
+               
+                var src = document.getElementById("sterren");
+                src.appendChild(img);
+            }
+
             $("#volgende").click(function () {
                 $("#antwoord").attr("readonly", true);
                 $("#volgende").attr("value", "Volgende");
@@ -22,7 +31,10 @@
         });
     </script> 
 
-    <div id="banaan">
+    <div id="sterren">
+    </div>
+
+    <div id="bananen">
         <img src="Images/banaan.jpg" />
     </div>
     <p>
