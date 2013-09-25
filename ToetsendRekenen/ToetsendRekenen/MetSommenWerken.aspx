@@ -11,8 +11,36 @@
             var aantalGoed = 10;
             if (aantalGoed = 10) {      
                 var img = document.createElement("img");
-                img.src = "Images/ster.jpg";
+                img.src = "Images/2sterren.jpg";
                
+                var src = document.getElementById("sterren");
+                src.appendChild(img);        
+            }
+            else if (aantalGoed = 20) {
+                var img = document.createElement("img");
+                img.src = "Images/2sterren.jpg";
+
+                var src = document.getElementById("sterren");
+                src.appendChild(img);
+            }
+            else if (aantalGoed = 30) {
+                var img = document.createElement("img");
+                img.src = "Images/3sterren.jpg";
+
+                var src = document.getElementById("sterren");
+                src.appendChild(img);
+            }
+            else if (aantalGoed = 40) {
+                var img = document.createElement("img");
+                img.src = "Images/4sterren.jpg";
+
+                var src = document.getElementById("sterren");
+                src.appendChild(img);
+            }
+            else if (aantalGoed = 50) {
+                var img = document.createElement("img");
+                img.src = "Images/5sterren.jpg";
+
                 var src = document.getElementById("sterren");
                 src.appendChild(img);
             }
