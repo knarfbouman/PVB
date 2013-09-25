@@ -13,15 +13,17 @@
      </div>
    
     
-      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="100%" style="margin-left: 0px" Font-Size="X-Large">
+  <br /><br />
+<p>
+   
+    
+      <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px" Width="100%" style="margin-left: 0px; top: 154px; left: 277px; margin-top: 0px;" Font-Size="X-Large">
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
         <asp:ListItem>test</asp:ListItem>
     </asp:RadioButtonList>
-  <br /><br />
-<p>
 <label for="amount">Getallenbereik: </label>
 <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" readonly="true" /></p>
         
