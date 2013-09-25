@@ -13,13 +13,13 @@ namespace ToetsendRekenen {
     public partial class WebForm2 {
         
         /// <summary>
-        /// headerradiobutton control.
+        /// opdrachtlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox headerradiobutton;
+        protected global::System.Web.UI.WebControls.Label opdrachtlbl;
         
         /// <summary>
         /// RadioButtonList1 control.
@@ -29,5 +29,14 @@ namespace ToetsendRekenen {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        
+        /// <summary>
+        /// RadioButtonList2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList2;
     }
 }

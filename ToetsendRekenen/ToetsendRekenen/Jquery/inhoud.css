@@ -1,4 +1,19 @@
-﻿body {
-	font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
-	font-size: 62.5%;
+﻿#slider-range {
+
+    width: 250px;
+
+}
+
+#headeropdracht {
+    text-align:center;
+}
+
+#radiobuttons {
+text-align:right;
+}
+
+#RadioButtonList2 {
+    float:right;
+    margin-top:15px;
+    padding:20px;
 }
