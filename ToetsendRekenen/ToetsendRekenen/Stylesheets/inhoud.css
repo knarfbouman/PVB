@@ -7,3 +7,30 @@
 #headeropdracht {
     text-align:center;
 }
+
+
+#SubCategorie {
+text-align:center;
+    top: 194px;
+    left: 286px;
+    width: 819px;
+}
+
+
+#datagrid {
+float:left;
+
+}
+
+#logout {
+float:right;
+margin-bottom:0px;
+}
+
+#changepass {
+float:right;
+margin-right:10px;
+    
+    padding:5%;
+}
+
