@@ -17,20 +17,59 @@ text-align:center;
 }
 
 
-#datagrid {
-float:left;
+#datagridviewmargin {
+margin-left:40px;
 
 }
 
 #logout {
 float:right;
-margin-bottom:0px;
+
 }
 
 #changepass {
 float:right;
-margin-right:10px;
-    
+margin-left:40px;
+margin-right:40px;
+background-color:#4B0083;
+color:white;
+border-color:black;
+font-family:Calibri;
+border-radius:50px;
+    border-style:solid;
     padding:5%;
 }
 
+#Change {
+
+    float:left;
+}
+
+#Dropdownlistsmargin {
+    margin-left:40px;
+
+}
+
+#buttonmargin {
+float:right;
+
+}
+
+#Dropdownlistsmargin {
+    background-color:#4B0083;
+    width:300px;
+    color:white;
+    font-family:Calibri;
+    border-style:solid;
+    border-radius:50px;
+    border-color:black;
+    padding:5%;
+    float:left;
+    padding-bottom:65px;
+}
+
+#testhestbest {
+display:inline-block;
+width:100%;
+
+}

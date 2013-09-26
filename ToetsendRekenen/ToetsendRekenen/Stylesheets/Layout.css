@@ -134,3 +134,7 @@ text-align:center;
 position:absolute;
 float:right;
 }
+
+.test {
+    margin-left:5px;
+}
