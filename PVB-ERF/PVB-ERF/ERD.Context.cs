@@ -13,10 +13,10 @@ namespace PVB_ERF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PVB_MOF_ERDEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public PVB_MOF_ERDEntities()
-            : base("name=PVB_MOF_ERDEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -26,9 +26,8 @@ namespace PVB_ERF
         }
     
         public DbSet<Admin> Admin { get; set; }
-        public DbSet<Categorieën> Categorieën { get; set; }
+        public DbSet<Images> Images { get; set; }
+        public DbSet<Scores> Scores { get; set; }
         public DbSet<Sessies> Sessies { get; set; }
-        public DbSet<Subcategorieën> Subcategorieën { get; set; }
-        public DbSet<Images> IMAGES { get; set; }
     }
 }

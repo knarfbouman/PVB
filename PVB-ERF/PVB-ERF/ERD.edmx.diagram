@@ -4,13 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e787312ac06c42238320824c20800dde" Name="Diagram1" ZoomLevel="118">
-        <EntityTypeShape EntityType="Model.Admin" Width="1.5" PointX="12.125" PointY="16.375" />
-        <EntityTypeShape EntityType="Model.Categorieën" Width="1.5" PointX="14" PointY="18" />
-        <EntityTypeShape EntityType="Model.Sessies" Width="1.5" PointX="14" PointY="16.375" />
-        <EntityTypeShape EntityType="Model.Subcategorieën" Width="1.5" PointX="12.125" PointY="18" />
-        <AssociationConnector Association="Model.FK_Subcategorieën_Categorieën" />
-        <EntityTypeShape EntityType="Model.Images" Width="1.5" PointX="15.875" PointY="16.375" />
+      <Diagram DiagramId="8f847fe5fe8f406d956ef2bf71aa68da" Name="Diagram1" ZoomLevel="114">
+        <EntityTypeShape EntityType="Model.Admin" Width="1.5" PointX="2.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Images" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Scores" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Sessies" Width="1.5" PointX="2.375" PointY="2.375" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
