@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jquery\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
