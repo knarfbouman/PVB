@@ -13,5 +13,18 @@ namespace ToetsendRekenen
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+            
+                lejbel.Text = RadioButtonList1.SelectedItem.Text;
+            
+            }
+
+        protected void SubCategorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

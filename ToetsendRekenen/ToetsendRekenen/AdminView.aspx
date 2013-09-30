@@ -24,7 +24,12 @@
     <asp:TextBox ID="tbweek" runat="server" Width="95px" CSSclass="test" ></asp:TextBox>&nbsp&nbsp&nbsp&nbsp
         <asp:Button ID="Button1" runat="server" Text="Bekijk gegevens" Width="109px" />
         <br /><br />
-           
+           <asp:Label ID="Label5" runat="server" Text ="Van:"></asp:Label>
+    <asp:TextBox ID="TextBox2" runat="server" Width="95px" CSSclass="test" ></asp:TextBox>
+        <asp:Label ID="Label6" runat="server" Text ="tot:"></asp:Label>
+        <asp:TextBox ID="TextBox3" runat="server" Width="95px" CSSclass="test" ></asp:TextBox>
+        <asp:Button ID="Button4" runat="server" Text="Bekijk gegevens" Width="109px" />
+        <br /><br />
         </div>
      <div id="changepass">
          <asp:Label ID="Editpasslabel" runat="server" Text ="Wachtwoord wijzigen" Font-Size="X-Large"></asp:Label><br /><br />

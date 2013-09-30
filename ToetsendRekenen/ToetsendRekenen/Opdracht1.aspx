@@ -21,11 +21,11 @@
 
 
 <asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px"  Font-Size="X-Large">
-        <asp:ListItem>test</asp:ListItem>
-        <asp:ListItem>test</asp:ListItem>
-        <asp:ListItem>test</asp:ListItem>
-        <asp:ListItem>test</asp:ListItem>
-        <asp:ListItem>test</asp:ListItem>
+        <asp:ListItem>optie 1</asp:ListItem>
+        <asp:ListItem>optie 2</asp:ListItem>
+        <asp:ListItem>optie 3</asp:ListItem>
+        <asp:ListItem>optie 4</asp:ListItem>
+        <asp:ListItem>optie 5</asp:ListItem>
     </asp:RadioButtonList>
  </div>
      
@@ -41,8 +41,10 @@
          <asp:ListItem>Normaal</asp:ListItem>
          <asp:ListItem>Moeilijk</asp:ListItem>
      </asp:RadioButtonList>
-  <br /><br />
-    <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" />
+  <br />
+     <asp:Label ID="lejbel" runat="server" Text="Label"></asp:Label>
+     <br />
+    <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />
 <script>

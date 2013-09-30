@@ -16,6 +16,7 @@
             <div id="ButtonRow3">
             <asp:Button ID="Opdracht4" runat="server" Text="Opdracht 4" CSSclass="Button"/>
             <asp:Button ID="Opdracht5" runat="server" Text="Opdracht 5" CSSclass="Button"/>
+            <asp:Button ID="Adminbutton" runat="server" Text="Resultaten" CSSclass="Button"/>
             </div>
 
             <div id="Tekst">
