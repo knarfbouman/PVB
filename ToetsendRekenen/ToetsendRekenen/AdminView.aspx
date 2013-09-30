@@ -47,7 +47,7 @@
         </div>
     <br /><br />
     <div id="datagridviewmargin">
-    <asp:GridView ID="datagrid" runat="server" Height="302px" Width="478px" AutoGenerateColumns="False" DataKeyNames="projectId" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="datagrid" runat="server" Height="302px" Width="478px" AutoGenerateColumns="False" DataKeyNames="projectId">
         <Columns>
             <asp:BoundField DataField="beginDatum" HeaderText="beginDatum" SortExpression="beginDatum" />
             <asp:BoundField DataField="eindDatum" HeaderText="eindDatum" SortExpression="eindDatum" />
@@ -57,7 +57,7 @@
         </Columns>
     </asp:GridView>
         </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:UrenregistratieConnectionString %>" SelectCommand="SELECT [beginDatum], [eindDatum], [projectId], [projectNaam], [projectOmschrijving] FROM [Projecten]"></asp:SqlDataSource>
+    
     
  
     </asp:Content>

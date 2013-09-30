@@ -38,7 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,8 +75,15 @@
     <Content Include="Leerlingresultaat.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="AdminView.aspx" />
+    <Content Include="OKKE BOSCH.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <DependentUpon>ToetsendRekenenEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Images.cs">
+      <DependentUpon>ToetsendRekenenEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Layout.Master.cs">
       <DependentUpon>Layout.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +131,34 @@
     <Compile Include="AdminView.aspx.designer.cs">
       <DependentUpon>AdminView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Scores.cs">
+      <DependentUpon>ToetsendRekenenEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sessies.cs">
+      <DependentUpon>ToetsendRekenenEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToetsendRekenenEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToetsendRekenenEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToetsendRekenenEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToetsendRekenenEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToetsendRekenenEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToetsendRekenenEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OKKE BOSCH.aspx.cs">
+      <DependentUpon>OKKE BOSCH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OKKE BOSCH.aspx.designer.cs">
+      <DependentUpon>OKKE BOSCH.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Layout.Master" />
@@ -127,12 +168,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />
+    <EntityDeploy Include="ToetsendRekenenEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ToetsendRekenenEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="packages.config" />
+    <Content Include="ToetsendRekenenEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToetsendRekenenEntity.edmx</DependentUpon>
+      <LastGenOutput>ToetsendRekenenEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ToetsendRekenenEntity.edmx.diagram">
+      <DependentUpon>ToetsendRekenenEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="ToetsendRekenenEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToetsendRekenenEntity.edmx</DependentUpon>
+      <LastGenOutput>ToetsendRekenenEntity.cs</LastGenOutput>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
