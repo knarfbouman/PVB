@@ -75,7 +75,7 @@
     <Content Include="Leerlingresultaat.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="AdminView.aspx" />
-    <Content Include="OKKE BOSCH.aspx" />
+    <Content Include="Okke.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs">
@@ -152,12 +152,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ToetsendRekenenEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OKKE BOSCH.aspx.cs">
-      <DependentUpon>OKKE BOSCH.aspx</DependentUpon>
+    <Compile Include="Okke.aspx.cs">
+      <DependentUpon>Okke.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OKKE BOSCH.aspx.designer.cs">
-      <DependentUpon>OKKE BOSCH.aspx</DependentUpon>
+    <Compile Include="Okke.aspx.designer.cs">
+      <DependentUpon>Okke.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
