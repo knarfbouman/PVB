@@ -9,7 +9,7 @@
     </div>
     <div id="Password">
     <asp:Label ID="Label2" runat="server" Text="Password" CssClass="lblPassword"></asp:Label>
-    <asp:TextBox ID="tbPassword" runat="server" CssClass="tbPasswordClass"></asp:TextBox>
+    <asp:TextBox ID="tbPassword" runat="server" TextMode="Password" CssClass="tbPasswordClass"></asp:TextBox>
     </div>
     <div id="ButtonLogin">
     <asp:Button ID="btnLogin" runat="server" Text="Log in" CssClass="ButtonLogin" OnClick="btnLogin_Click" />
