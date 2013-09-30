@@ -7,23 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PVB_ERF
+namespace ToetsendRekenen
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Categorieën
+    public partial class Images
     {
-        public Categorieën()
-        {
-            this.Subcategorieën = new HashSet<Subcategorieën>();
-        }
-    
-        public int CategorieID { get; set; }
-        public string Categorienaam { get; set; }
-        public int Score { get; set; }
-        public System.DateTime Datum { get; set; }
-    
-        public virtual ICollection<Subcategorieën> Subcategorieën { get; set; }
+        public int ImageID { get; set; }
+        public string ImageName { get; set; }
+        public byte[] ImageBinary { get; set; }
     }
 }

@@ -7,19 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PVB_ERF
+namespace ToetsendRekenen
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Subcategorieën
+    public partial class Sessies
     {
-        public int SubcategorieID { get; set; }
-        public int CategorieID { get; set; }
-        public string Subcategorienaam { get; set; }
-        public int Score { get; set; }
         public System.DateTime Datum { get; set; }
-    
-        public virtual Categorieën Categorieën { get; set; }
+        public int Aantal { get; set; }
     }
 }

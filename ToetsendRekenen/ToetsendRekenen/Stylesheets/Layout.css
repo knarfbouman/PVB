@@ -138,3 +138,9 @@ float:right;
 .test {
     margin-left:5px;
 }
+
+.lblError {
+   margin-top:50px;
+   margin-left:-245px;
+   position:absolute;
+}

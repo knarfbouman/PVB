@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PVB_ERF
+namespace ToetsendRekenen
 {
     using System;
     using System.Data.Entity;
