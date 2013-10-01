@@ -12,6 +12,9 @@ namespace ToetsendRekenen
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class Entities : DbContext
     {
@@ -29,5 +32,18 @@ namespace ToetsendRekenen
         public DbSet<Images> Images { get; set; }
         public DbSet<Scores> Scores { get; set; }
         public DbSet<Sessies> Sessies { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> BetweenDates(Nullable<System.DateTime> datestart, Nullable<System.DateTime> dateend)
+        {
+            var datestartParameter = datestart.HasValue ?
+                new ObjectParameter("Datestart", datestart) :
+                new ObjectParameter("Datestart", typeof(System.DateTime));
+    
+            var dateendParameter = dateend.HasValue ?
+                new ObjectParameter("Dateend", dateend) :
+                new ObjectParameter("Dateend", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("BetweenDates", datestartParameter, dateendParameter);
+        }
     }
 }
