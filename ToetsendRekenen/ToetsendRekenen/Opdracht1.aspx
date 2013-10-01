@@ -43,10 +43,10 @@
          <asp:ListItem>Moeilijk</asp:ListItem>
      </asp:RadioButtonList>
   <br />
-     <asp:Label ID="lejbel" runat="server" Text="Label"></asp:Label>
+     <asp:Label ID="lejbel" runat="server" Text=""></asp:Label>
      <br />
-    <label  id="labeltest" onchange="postdata"  >hoi</label>
-    
+    <input type="hidden" name="labeltest"  id="labeltest"  ></input>
+    <input type="hidden" name="getal2"  id="getal2"  ></input>
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />
@@ -61,7 +61,9 @@
             values: [0, 100],
             slide: function (event, ui) {
                 var pizza = valMap[ui.values[0]];
-                $("#labeltest").text(pizza);
+                var getal2 = valMap[ui.values[1]];
+                $("#labeltest").val(pizza);
+                    $("#getal2").val(getal2);
                 $("#amount").val(valMap[ui.values[0]] + " - " + valMap[ui.values[1]]);
 
             }

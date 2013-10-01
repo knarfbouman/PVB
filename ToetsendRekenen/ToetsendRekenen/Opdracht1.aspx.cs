@@ -11,17 +11,33 @@ namespace ToetsendRekenen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            opdrachtlbl.Text = Convert.ToString(Session["header"]);
-            //todo: if session header = "" then redirect to home page
+            string head = Convert.ToString(Session["header"]);
+            opdrachtlbl.Text = head;
+          
+            
+            if (head == "")
+            {
+                Response.Redirect("/home.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-           
-                lejbel.Text = RadioButtonList1.SelectedItem.Text;
-                lejbel.Text+= ", " +  SubCategorie.SelectedItem.Text;
-                lejbel.Text += ", "  ;
+            string getal1 = (this.Request.Form.Get("labeltest"));
+           string getal2 = (this.Request.Form.Get("getal2"));
+           if ( Convert.ToString( RadioButtonList1.SelectedItem) != "" && Convert.ToString( SubCategorie.SelectedItem) !="")
+           {
+
+               lejbel.Text = RadioButtonList1.SelectedItem.Text;
+               lejbel.Text += ", " + SubCategorie.SelectedItem.Text;
+               lejbel.Text += ", " + getal1;
+               lejbel.Text += ", " + getal2;
+           }
+           else
+           {
+               
+           }
             }
 
         protected void SubCategorie_SelectedIndexChanged(object sender, EventArgs e)
