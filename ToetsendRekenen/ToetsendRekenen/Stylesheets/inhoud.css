@@ -37,7 +37,7 @@ border-color:black;
 font-family:Calibri;
 border-radius:50px;
     border-style:solid;
-    padding:6%;
+    padding:4%;
     margin-right:10px;
 }
 
@@ -64,7 +64,8 @@ float:right;
     border-style:solid;
     border-radius:50px;
     border-color:black;
-    padding:2%;
+    padding:1%;
+    padding-left:2%;
     float:left;
     padding-bottom:65px;
     margin-left:10px;
