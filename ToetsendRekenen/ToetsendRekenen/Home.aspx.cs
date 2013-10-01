@@ -11,11 +11,12 @@ namespace ToetsendRekenen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Opdracht1_Click(object sender, EventArgs e)
         {
+            Session.Add("header", Opdracht1.Text);
             Response.Redirect("/opdracht1.aspx");
         }
     }

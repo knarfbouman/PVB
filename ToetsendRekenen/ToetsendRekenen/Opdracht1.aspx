@@ -20,7 +20,7 @@
 
 
 
-<asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px"  Font-Size="X-Large">
+<asp:RadioButtonList ID="SubCategorie" runat="server" Height="119px"  Font-Size="X-Large" OnSelectedIndexChanged="SubCategorie_SelectedIndexChanged1">
         <asp:ListItem>optie 1</asp:ListItem>
         <asp:ListItem>optie 2</asp:ListItem>
         <asp:ListItem>optie 3</asp:ListItem>
@@ -31,7 +31,8 @@
      
     <br /><br />
        <label for="amount">Getallenbereik: </label>
-<input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" readonly="true" /> 
+ <input type="text" id="amount" style="border: 0; color: #f6931f; font-weight: bold;" readonly="true" />
+
     <div id="slider-range">
     </div>
   
@@ -44,11 +45,14 @@
   <br />
      <asp:Label ID="lejbel" runat="server" Text="Label"></asp:Label>
      <br />
+    <asp:label id="labeltest" >hoi</asp:label>
+    
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />
 <script>
     $(function () {
+        
         var valMap = [0, 10, 100, 1000, 10000, 100000];
         $("#slider-range").slider({
             range: true,
@@ -56,12 +60,17 @@
             max: valMap.length - 1,
             values: [0, 100],
             slide: function (event, ui) {
+                var pizza = valMap[ui.values[0]];
+                $("#labeltest").text(pizza);
                 $("#amount").val(valMap[ui.values[0]] + " - " + valMap[ui.values[1]]);
+
             }
         });
         $("#amount").val(valMap[$("#slider-range").slider("values", 0)] +
         " - " + valMap[$("#slider-range").slider("values", 1)]);
+        
     });
 </script>
+    
 
     </asp:Content>
