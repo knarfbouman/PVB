@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,7 @@ namespace ToetsendRekenen
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            string s = (this.Request.Form.Get("n_test"));
         }
 
     }

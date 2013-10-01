@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="Rekenenen" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="MetSommenWerken.aspx.cs" Inherits="ToetsendRekenen.WebForm3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <link href="Stylesheets/banaan.css" rel="stylesheet" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link href="Stylesheets/banaan.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -16,49 +18,26 @@
                 var src = document.getElementById("sterren");
                 src.appendChild(img);        
             }
-            else if (aantalGoed = 20) {
-                var img = document.createElement("img");
-                img.src = "Images/2sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            else if (aantalGoed = 30) {
-                var img = document.createElement("img");
-                img.src = "Images/3sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            else if (aantalGoed = 40) {
-                var img = document.createElement("img");
-                img.src = "Images/4sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            else if (aantalGoed = 50) {
-                var img = document.createElement("img");
-                img.src = "Images/5sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-
-            $("#volgende").click(function () {
+            $("#zieAntwoord").click(function () {
                 $("#antwoord").attr("readonly", true);
-                $("#volgende").attr("value", "Volgende");
+                $("#zieAntwoord").attr("value", "Volgende");
+                $("#zieAntwoord").attr("id", "volgende");
                 $("#uitleg").removeAttr("hidden");
                 if ($("#antwoord").val() != "25") {
                     $("#fout").removeAttr("hidden");
+                   
                 }
                 else {
                     $("#goed").removeAttr("hidden");
                 }
+                
             })
         });
+        $("#volgende").click(function () {
+            window.location = "../home.aspx";
+        });
     </script> 
-
+        
     <div id="sterren">
     </div>
 
@@ -68,7 +47,7 @@
     <p>
         Je hebt 2 bananen, iemand geeft jou er 23 bananen bij.
         <br />
-        Hoeveel bananen heb je nu?
+        Wat is 2 + 23? (Vul een heel getal in)
     </p>
     <input type="text" id="antwoord" placeholder="Vul hier je antwoord in" />
     <br />
@@ -77,6 +56,6 @@
         <p id="goed" hidden="hidden">Je antwoord is goed!</p>
         <p id="uitleg" hidden="hidden">Stel je hebt 23 bananen, dan doe je er 2 keer 1 bij, 24 en 25. Het antwoord is dus 25!</p>
     </div>
-    <input type="button" id="volgende" value="Zie antwoord" />
+    <input type="button" id="zieAntwoord" value="Zie antwoord" />
 
 </asp:Content>
