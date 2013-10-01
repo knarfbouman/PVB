@@ -4,8 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-       <asp:Button ID="logout" runat="server" Text="Uitloggen" />
+       
     <br /><br />
+
     <div id="testhestbest">
        
     <div id="Dropdownlistsmargin">
@@ -31,22 +32,29 @@
         <asp:Button ID="Button4" runat="server" Text="Bekijk gegevens" Width="109px" />
         <br /><br />
         </div>
+
      <div id="changepass">
          <asp:Label ID="Editpasslabel" runat="server" Text ="Wachtwoord wijzigen" Font-Size="X-Large"></asp:Label><br /><br />
         <asp:Label ID="lbloldpass" runat="server" Text ="Oud wachtwoord:"></asp:Label>
        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <asp:TextBox ID="tblogin" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbOudWachtwoord" runat="server"></asp:TextBox>
         <br /> <br />
         <asp:Label ID="lblnewpass" runat="server" Text ="Nieuw wachtwoord:"></asp:Label>
         &nbsp&nbsp&nbsp&nbsp
-    <asp:TextBox ID="tbpass" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbNieuwWachtwoord" runat="server"></asp:TextBox>
         <br />    <br />  
         <asp:Label ID="Label1" runat="server" Text ="Wachtwoord herhalen:"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:TextBox ID="tbNieuwWachtwoord2" runat="server"></asp:TextBox>
         <br /> <br />
-        <asp:Button runat="server" ID="Change" Text="Verander" />
+        <asp:Button runat="server" ID="btnWijzig" Text="Verander" OnClick="btnWijzig_Click" />
+         <asp:Button ID="logout" runat="server" Text="Uitloggen" OnClick="logout_Click" CSSClass="btnUitloggen"/>
+          <asp:Label ID="lblError" runat="server" Text="" CssClass="lblErrorAdmin"></asp:Label>
         </div>
+
+       
+
         </div>
+
     <div id="buttonmargin">
  
         </div>

@@ -144,3 +144,13 @@ float:right;
    margin-left:-245px;
    position:absolute;
 }
+
+.lblErrorAdmin {
+    position:absolute;
+    margin-top:30px;
+    margin-left:-300px;
+}
+
+.btnUitloggen {
+    margin-left:160px;
+}

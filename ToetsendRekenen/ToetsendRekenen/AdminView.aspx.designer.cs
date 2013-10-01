@@ -13,15 +13,6 @@ namespace ToetsendRekenen {
     public partial class WebForm6 {
         
         /// <summary>
-        /// logout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button logout;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -166,13 +157,13 @@ namespace ToetsendRekenen {
         protected global::System.Web.UI.WebControls.Label lbloldpass;
         
         /// <summary>
-        /// tblogin control.
+        /// tbOudWachtwoord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tblogin;
+        protected global::System.Web.UI.WebControls.TextBox tbOudWachtwoord;
         
         /// <summary>
         /// lblnewpass control.
@@ -184,13 +175,13 @@ namespace ToetsendRekenen {
         protected global::System.Web.UI.WebControls.Label lblnewpass;
         
         /// <summary>
-        /// tbpass control.
+        /// tbNieuwWachtwoord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbpass;
+        protected global::System.Web.UI.WebControls.TextBox tbNieuwWachtwoord;
         
         /// <summary>
         /// Label1 control.
@@ -202,22 +193,40 @@ namespace ToetsendRekenen {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// tbNieuwWachtwoord2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tbNieuwWachtwoord2;
         
         /// <summary>
-        /// Change control.
+        /// btnWijzig control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Change;
+        protected global::System.Web.UI.WebControls.Button btnWijzig;
+        
+        /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logout;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
         /// datagrid control.
