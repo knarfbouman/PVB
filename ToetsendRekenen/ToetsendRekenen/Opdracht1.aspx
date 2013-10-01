@@ -45,7 +45,7 @@
   <br />
      <asp:Label ID="lejbel" runat="server" Text="Label"></asp:Label>
      <br />
-    <asp:label id="labeltest" >hoi</asp:label>
+    <label  id="labeltest" onchange="postdata"  >hoi</label>
     
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
@@ -70,6 +70,7 @@
         " - " + valMap[$("#slider-range").slider("values", 1)]);
         
     });
+
 </script>
     
 
