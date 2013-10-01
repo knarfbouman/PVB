@@ -46,8 +46,8 @@
         <asp:Label ID="Label1" runat="server" Text ="Wachtwoord herhalen:"></asp:Label>
     <asp:TextBox ID="tbNieuwWachtwoord2" runat="server"></asp:TextBox>
         <br /> <br />
-        <asp:Button runat="server" ID="btnWijzig" Text="Verander" OnClick="btnWijzig_Click" />
-         <asp:Button ID="logout" runat="server" Text="Uitloggen" OnClick="logout_Click" CSSClass="btnUitloggen"/>
+        <asp:Button runat="server" ID="btnWijzig" Text="Verander" OnClick="btnWijzig_Click" Width="109px"/>
+         <asp:Button ID="logout" runat="server" Text="Uitloggen" OnClick="logout_Click" CSSClass="btnUitloggen" Width="109px"/>
           <asp:Label ID="lblError" runat="server" Text="" CssClass="lblErrorAdmin"></asp:Label>
         </div>
 
@@ -60,17 +60,10 @@
         </div>
     <br /><br />
     <div id="datagridviewmargin">
-    <asp:GridView ID="datagrid" runat="server" Height="302px" Width="478px" AutoGenerateColumns="False" DataKeyNames="projectId">
-        <Columns>
-            <asp:BoundField DataField="beginDatum" HeaderText="beginDatum" SortExpression="beginDatum" />
-            <asp:BoundField DataField="eindDatum" HeaderText="eindDatum" SortExpression="eindDatum" />
-            <asp:BoundField DataField="projectId" HeaderText="projectId" InsertVisible="False" ReadOnly="True" SortExpression="projectId" />
-            <asp:BoundField DataField="projectNaam" HeaderText="projectNaam" SortExpression="projectNaam" />
-            <asp:BoundField DataField="projectOmschrijving" HeaderText="projectOmschrijving" SortExpression="projectOmschrijving" />
-        </Columns>
-    </asp:GridView>
+        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
     
     
  
     </asp:Content>
+
