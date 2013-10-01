@@ -13,7 +13,7 @@ namespace ToetsendRekenen
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            string s = (this.Request.Form.Get("n_test"));
+            
         }
 
     }

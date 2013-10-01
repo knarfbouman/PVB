@@ -57,5 +57,13 @@ namespace ToetsendRekenen
             Response.Redirect("/Login.aspx");
             Session.Abandon();
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string van = (this.Request.Form.Get("textbox2"));
+            string tot = (this.Request.Form.Get("textbox3"));
+
+            //TREnt.BetweenDates(van, tot);
+        }
     }
 }
