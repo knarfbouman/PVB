@@ -204,6 +204,11 @@ namespace FinalUrenRegistratie
             tbUren.Text = sum.ToString();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
 
     }

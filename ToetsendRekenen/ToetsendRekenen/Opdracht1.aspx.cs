@@ -11,18 +11,25 @@ namespace ToetsendRekenen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            opdrachtlbl.Text = Convert.ToString(Session["header"]);
+            //todo: if session header = "" then redirect to home page
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
-            
+
+           
                 lejbel.Text = RadioButtonList1.SelectedItem.Text;
-            
+                lejbel.Text+= ", " +  SubCategorie.SelectedItem.Text;
+                lejbel.Text += ", "  ;
             }
 
         protected void SubCategorie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SubCategorie_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }
