@@ -33,11 +33,15 @@ namespace ToetsendRekenen
                lejbel.Text += ", " + SubCategorie.SelectedItem.Text;
                lejbel.Text += ", " + getal1;
                lejbel.Text += ", " + getal2;
+
+               string[] Subcatergoriearray = new string[4] { RadioButtonList1.SelectedItem.Text, SubCategorie.SelectedItem.Text, getal1, getal2 };
+               
            }
            else
            {
-               
+               Response.Write("<script>alert('Je bent iets vergeten te selecteren!');</script>");
            }
+ 
             }
 
         protected void SubCategorie_SelectedIndexChanged(object sender, EventArgs e)

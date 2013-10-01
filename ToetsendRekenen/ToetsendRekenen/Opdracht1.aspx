@@ -45,8 +45,8 @@
   <br />
      <asp:Label ID="lejbel" runat="server" Text=""></asp:Label>
      <br />
-    <input type="hidden" name="labeltest"  id="labeltest"  ></input>
-    <input type="hidden" name="getal2"  id="getal2"  ></input>
+    <input type="hidden" name="labeltest"  id="labeltest" value ="0"  ></input>
+    <input type="hidden" name="getal2"  id="getal2" value ="100000"  ></input>
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />
