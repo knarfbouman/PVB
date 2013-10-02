@@ -15,7 +15,7 @@ namespace ToetsendRekenen
         {
             if (Session["Admin"] != "Admin")
             {
-                //Response.Redirect("/Login.aspx");
+                Response.Redirect("/Login.aspx");
             }
         }
 
