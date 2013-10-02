@@ -12,8 +12,14 @@ namespace ToetsendRekenen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             
+            
+        }
+
+        protected void zieAntwoord_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/home.aspx");
+
         }
 
     }
