@@ -19,6 +19,16 @@ namespace ToetsendRekenen
             {
                 Response.Redirect("/home.aspx");
             }
+
+            if (head == "Opdracht 1")
+            {
+                SubCategorie.Items.Clear();
+                SubCategorie.Items.Add("Erbijsommen");
+                SubCategorie.Items.Add("Erafsommen");
+                SubCategorie.Items.Add("Deelsommen");
+                SubCategorie.Items.Add("Keersommen");
+                SubCategorie.Items.Add("Gemixed");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,13 +39,11 @@ namespace ToetsendRekenen
            if ( Convert.ToString( RadioButtonList1.SelectedItem) != "" && Convert.ToString( SubCategorie.SelectedItem) !="")
            {
 
-               lejbel.Text = RadioButtonList1.SelectedItem.Text;
-               lejbel.Text += ", " + SubCategorie.SelectedItem.Text;
-               lejbel.Text += ", " + getal1;
-               lejbel.Text += ", " + getal2;
+               
 
                string[] Subcatergoriearray = new string[4] { RadioButtonList1.SelectedItem.Text, SubCategorie.SelectedItem.Text, getal1, getal2 };
                
+               Session.Add("subcategoriearray", Subcatergoriearray);
            }
            else
            {
