@@ -29,13 +29,6 @@
                     e.preventDefault();
             });
 
-            //Zodat tekstbox click event meeneemt als je op enter drukt.
-            $("#antwoord").keyup(function (event) {
-                if (event.keyCode == 13) {
-                    $("#zieAntwoord").click();
-                }
-            });
-
             //Eerste button hiden.
             $("#volgende").attr("hidden", true);
             
@@ -124,6 +117,7 @@
                 $("#antwoord").attr("readonly", false);
                 $("#volgende").attr("hidden", true);
                 $("#zieAntwoord").attr("hidden", false);
+                $("#uitleg").empty();
                 $("#fout").attr("hidden", true);
                 $("#goed").attr("hidden", true);
                 $("#antwoord").val('');
