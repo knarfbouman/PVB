@@ -10,6 +10,20 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Entity Framework is Microsoft's recommended data access technology for new applications.</description>
     <summary>Entity Framework is Microsoft's recommended data access technology for new applications.</summary>
+<<<<<<< HEAD
+    <language>en-US</language>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <language>en-US</language>
+=======
+>>>>>>> d79a76377a4558b007db0738b9f1c917fb047e43
+=======
+>>>>>>> d79a76377a4558b007db0738b9f1c917fb047e43
+=======
+>>>>>>> d79a76377a4558b007db0738b9f1c917fb047e43
+>>>>>>> 244d61f67312121b913c28765c9bcf9c608dc1f0
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Data.Entity" targetFramework="" />
       <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="" />

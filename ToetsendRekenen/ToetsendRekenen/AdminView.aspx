@@ -15,17 +15,29 @@
     <div id="Dropdownlistsmargin">
         <asp:Label Font-Size="X-Large" Text="Statistieken" runat="server"></asp:Label><br /><br />
     <asp:Label ID="Label2" runat="server" Text ="Jaar:"></asp:Label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <asp:DropDownList ID="DropDownList1" runat="server" Width="100px">
+        <asp:DropDownList ID="DropDownList1" runat="server" Width="120px">
     </asp:DropDownList>&nbsp&nbsp&nbsp&nbsp
         <asp:Button ID="Button3" runat="server" Text="Bekijk gegevens" Width="109px" />
         <br /><br />
         <asp:Label ID="Label3" runat="server" Text ="Maand:"></asp:Label>&nbsp&nbsp
-    <asp:DropDownList ID="DropDownList2" runat="server" Width="100px" CSSclass="test">
+    <asp:DropDownList ID="ddlMaand" runat="server" Width="120px" CSSclass="test" AppendDataBoundItems="true" >
+            <asp:ListItem>Januari</asp:ListItem>
+            <asp:ListItem>Februari</asp:ListItem>
+            <asp:ListItem>Maart</asp:ListItem>
+            <asp:ListItem>April</asp:ListItem>
+            <asp:ListItem>Mei</asp:ListItem>
+            <asp:ListItem>Juni</asp:ListItem>
+            <asp:ListItem>Juli</asp:ListItem>
+            <asp:ListItem>Augustus</asp:ListItem>
+            <asp:ListItem>September</asp:ListItem>
+            <asp:ListItem>Oktober</asp:ListItem>
+            <asp:ListItem>November</asp:ListItem>
+            <asp:ListItem>December</asp:ListItem>
     </asp:DropDownList>&nbsp&nbsp&nbsp&nbsp
-        <asp:Button ID="Button2" runat="server" Text="Bekijk gegevens" Width="109px" />
+        <asp:Button ID="Button2" runat="server" Text="Bekijk gegevens" Width="109px" OnClick="Button2_Click" />
         <br /><br />
         <asp:Label ID="Label4" runat="server" Text ="Week:"></asp:Label>&nbsp&nbsp&nbsp&nbsp  
-    <asp:TextBox ID="tbweek" runat="server" Width="95px" CSSclass="test" ></asp:TextBox>&nbsp&nbsp&nbsp&nbsp
+    <asp:TextBox ID="tbweek" runat="server" Width="120px" CSSclass="test" ></asp:TextBox>&nbsp&nbsp&nbsp&nbsp
         <asp:Button ID="Button1" runat="server" Text="Bekijk gegevens" Width="109px" />
         <br /><br />
            <asp:Label ID="Label5" runat="server" Text ="Van:"></asp:Label>

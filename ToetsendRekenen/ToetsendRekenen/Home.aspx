@@ -5,17 +5,17 @@
 
             <div id="ButtonRow1">
             <asp:Button ID="Opdracht1" runat="server" Text="Opdracht 1" CSSclass="Button" OnClick="Opdracht1_Click"/>
-            <asp:Button ID="Opdracht2" runat="server" Text="Opdracht 2" CSSclass="Button"/>
-            <asp:Button ID="Opdracht3" runat="server" Text="Opdracht 3" CSSclass="Button"/>
+            <asp:Button ID="Opdracht2" runat="server" Text="Opdracht 2" CSSclass="Button" OnClick="Opdracht2_Click"/>
+            <asp:Button ID="Opdracht3" runat="server" Text="Opdracht 3" CSSclass="Button" OnClick="Opdracht3_Click"/>
             </div>
             <div id="ButtonRow2">
-            <asp:Button ID="Opdracht6" runat="server" Text="Opdracht 6" CSSclass="Button"/>
-            <asp:Button ID="Opdracht7" runat="server" Text="Opdracht 7" CSSclass="Button"/>
-            <asp:Button ID="Opdracht8" runat="server" Text="Opdracht 8" CSSclass="Button"/>
+            <asp:Button ID="Opdracht6" runat="server" Text="Opdracht 6" CSSclass="Button" OnClick="Opdracht6_Click"/>
+            <asp:Button ID="Opdracht7" runat="server" Text="Opdracht 7" CSSclass="Button" OnClick="Opdracht7_Click"/>
+            <asp:Button ID="Opdracht8" runat="server" Text="Opdracht 8" CSSclass="Button" OnClick="Opdracht8_Click"/>
             </div>
             <div id="ButtonRow3">
-            <asp:Button ID="Opdracht4" runat="server" Text="Opdracht 4" CSSclass="Button"/>
-            <asp:Button ID="Opdracht5" runat="server" Text="Opdracht 5" CSSclass="Button"/>
+            <asp:Button ID="Opdracht4" runat="server" Text="Opdracht 4" CSSclass="Button" OnClick="Opdracht4_Click"/>
+            <asp:Button ID="Opdracht5" runat="server" Text="Opdracht 5" CSSclass="Button" OnClick="Opdracht5_Click"/>
             <asp:Button ID="Adminbutton" runat="server" Text="Resultaten" CSSclass="Button"/>
             </div>
 
