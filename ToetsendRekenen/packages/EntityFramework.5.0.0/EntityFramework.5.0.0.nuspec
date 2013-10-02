@@ -11,7 +11,10 @@
     <description>Entity Framework is Microsoft's recommended data access technology for new applications.</description>
     <summary>Entity Framework is Microsoft's recommended data access technology for new applications.</summary>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <language>en-US</language>
+=======
+>>>>>>> d79a76377a4558b007db0738b9f1c917fb047e43
 =======
 >>>>>>> d79a76377a4558b007db0738b9f1c917fb047e43
     <frameworkAssemblies>
