@@ -10,58 +10,117 @@
 
     <script>
         $(function () {
+            //Alle variabelen.
+            var aantalGoed = 0;
+            var voortgang = 1;
+            var getal1 = Math.floor(Math.random() * 10) + 1;
+            var getal2 = Math.floor(Math.random() * 10) + 1;
+            var antwoord = getal1 + getal2;
+
+            //Alleen nummers toestaan in tekstbox
+            $("#antwoord").keypress(function (e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k) >= 0))
+                    e.preventDefault();
+            });
+
+            //Zodat tekstbox click event meeneemt als je op enter drukt.
             $("#antwoord").keyup(function (event) {
                 if (event.keyCode == 13) {
                     $("#zieAntwoord").click();
                 }
             });
 
+            //Eerste button hiden.
             $("#volgende").attr("hidden", true);
-            var aantalGoed = 0;
             
-            var voortgang = 1;
-            var getal1 = Math.floor(Math.random() * 10) + 1;
-            var getal2 = Math.floor(Math.random() * 10) + 1;
-            var antwoord = getal1 + getal2;
-            $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in)");
-            $("#voortgang").append("vraag " + voortgang + " van 50");
+            //De vraag en voortgang in de desbetreffende divs zetten.
+            $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in).");
+            $("#voortgang").append("Vraag " + voortgang + " van 50.");
 
-            
-
+            //Button click functie
             $("#zieAntwoord").click(function () {
-
+                //Divs en buttons properties veranderen.
                 $("#antwoord").attr("readonly", true);
                 $("#volgende").attr("value", "Volgende");
                 $("#volgende").attr("hidden", false);
                 $("#zieAntwoord").attr("hidden", true);
                 $("#uitleg").removeAttr("hidden");
                 
+                //If else kijkt of het antwoord goed is.
                 if ($("#antwoord").val() != antwoord) {
                     $("#fout").removeAttr("hidden");
-
                 }
                 else {
                     $("#goed").removeAttr("hidden");
                     aantalGoed = aantalGoed + 1;
                 }
+
+                //If else voor de aantal goed beantwoorde vragen.
                 $("#aantalgoed").empty();
-                if (aantalGoed == 0 || aantalGoed == 1) {
+                if (aantalGoed == 1) {
                     $("#aantalgoed").append(aantalGoed + " vraag goed bantwoord");
                 }
 
-                else if (aantalGoed > 1) {
+                else if (aantalGoed == 0 || aantalGoed > 1) {
                     $("#aantalgoed").append(aantalGoed + " vragen goed bantwoord");
                 }
+
+                //Uitleg erbij zetten.
+                $("#uitleg").empty();
+                $("#uitleg").append("Stel je hebt " + getal1 + ", dan tel je er " + getal2 + "  bij. Het antwoord is dus " + antwoord + "!")
+
+                //Image voor sterren erbij zetten.
                 if (aantalGoed == 10) {
+                    $("#sterren").empty();
                     var img = document.createElement("img");
                     img.src = "Images/ster.jpg";
 
                     var src = document.getElementById("sterren");
                     src.appendChild(img);
                 }
+                else if (aantalGoed == 20) {
+                    $("#sterren").empty();
+                    var img = document.createElement("img");
+                    img.src = "Images/2sterren.jpg";
 
+                    var src = document.getElementById("sterren");
+                    src.appendChild(img);
+                }
+                else if (aantalGoed == 30) {
+                    $("#sterren").empty();
+                    var img = document.createElement("img");
+                    img.src = "Images/3sterren.jpg";
+
+                    var src = document.getElementById("sterren");
+                    src.appendChild(img);
+                }
+                else if (aantalGoed == 40) {
+                    $("#sterren").empty();
+                    var img = document.createElement("img");
+                    img.src = "Images/4sterren.jpg";
+
+                    var src = document.getElementById("sterren");
+                    src.appendChild(img);
+                }
+                else if (aantalGoed == 50) {
+                    $("#sterren").empty();
+                    var img = document.createElement("img");
+                    img.src = "Images/5sterren.jpg";
+
+                    var src = document.getElementById("sterren");
+                    src.appendChild(img);
+                }
             });
+
+            //Tweede button click functie.
             $("#volgende").click(function () {
+                //Divs en buttons properties veranderen.
                 $("#antwoord").attr("readonly", false);
                 $("#volgende").attr("hidden", true);
                 $("#zieAntwoord").attr("hidden", false);
@@ -72,7 +131,8 @@
                 $("#voortgang").empty();
                 voortgang = voortgang + 1;
                 $("#voortgang").append("vraag " + voortgang + " van 50");
-                
+
+                //Getallen opnieuw randomizen.
                 getal1 = Math.floor(Math.random() * 10) + 1;
                 getal2 = Math.floor(Math.random() * 10) + 1;
                 antwoord = getal1 + getal2;
@@ -96,7 +156,8 @@
     <div>
         <p id="fout" hidden="hidden">Je antwoord is fout.</p>
         <p id="goed" hidden="hidden">Je antwoord is goed!</p>
-        <%--<p id="uitleg" hidden="hidden">Stel je hebt 23 bananen, dan doe je er 2 keer 1 bij, 24 en 25. Het antwoord is dus 25!</p>--%>
+        <div id="uitleg">
+        </div>
     </div>
     <input type="button" id="zieAntwoord" value="Zie antwoord" />
     <input type="button" id="volgende" value="Volgende" />
