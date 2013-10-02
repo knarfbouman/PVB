@@ -72,9 +72,10 @@ namespace ToetsendRekenen
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlconn = new SqlConnection("data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot");
+            SqlConnection sqlconn = new SqlConnection(@"data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot");
             sqlconn.Open();
-            SqlCommand sqlcom = new SqlCommand("SELECT DISTINCT datum from Scores   " + ddlMaand.SelectedValue + "", sqlconn);
+            SqlCommand sqlcom = new SqlCommand("SELECT DISTINCT datum from Scores   " , sqlconn);
+            //+ ddlMaand.SelectedValue + ""
             SqlDataReader reader;
 
             reader = sqlcom.ExecuteReader();
@@ -82,7 +83,7 @@ namespace ToetsendRekenen
             DataTable dt = new DataTable();
             dt.Load(reader);
 
-            GridView1.DataSource = dt;
+            DataGrid.DataSource = dt;
             sqlconn.Close();
 
         }
