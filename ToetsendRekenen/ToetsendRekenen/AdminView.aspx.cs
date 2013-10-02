@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +19,8 @@ namespace ToetsendRekenen
             {
                 //Response.Redirect("/Login.aspx");
             }
+
+            ddlMaand.Items.Insert(0, new ListItem("Selecteer Maand", string.Empty));
         }
 
         protected void btnWijzig_Click(object sender, EventArgs e)
@@ -64,6 +68,23 @@ namespace ToetsendRekenen
             string tot = (this.Request.Form.Get("textbox3"));
 
             //TREnt.BetweenDates(van, tot);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection("data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot");
+            sqlconn.Open();
+            SqlCommand sqlcom = new SqlCommand("SELECT DISTINCT datum from Scores   " + ddlMaand.SelectedValue + "", sqlconn);
+            SqlDataReader reader;
+
+            reader = sqlcom.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+
+            GridView1.DataSource = dt;
+            sqlconn.Close();
+
         }
     }
 }
