@@ -33,9 +33,6 @@
                 
             })
         });
-        $("#volgende").click(function () {
-            window.location = "../home.aspx";
-        });
     </script> 
         
     <div id="sterren">
