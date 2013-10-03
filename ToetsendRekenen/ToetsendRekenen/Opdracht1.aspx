@@ -43,7 +43,6 @@
          <asp:ListItem>Moeilijk</asp:ListItem>
      </asp:RadioButtonList>
   <br />
-     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
      <br />
     <input type="hidden" name="labeltest"  id="labeltest" value ="0"  ></input>
     <input type="hidden" name="getal2"  id="getal2" value ="100000"  ></input>

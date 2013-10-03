@@ -22,6 +22,7 @@ namespace ToetsendRekenen
 
             if (head == "Opdracht 1")
             {
+                
                 SubCategorie.Items.Remove("optie 1");
                 SubCategorie.Items.Remove("optie 2");
                 SubCategorie.Items.Remove("optie 3");
@@ -57,6 +58,11 @@ namespace ToetsendRekenen
            }
            else
            {
+               SubCategorie.Items.Remove("Erbijsommen");
+               SubCategorie.Items.Remove("Erafsommen");
+               SubCategorie.Items.Remove("Deelsommen");
+               SubCategorie.Items.Remove("Keersommen");
+               SubCategorie.Items.Remove("Gemixed");
                Response.Write("<script>alert('Je bent iets vergeten te selecteren!');</script>");
                
            }
