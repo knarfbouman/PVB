@@ -16,10 +16,10 @@
         var getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
         var antwoord = getal1 + getal2;
 
-        localStorage.setItem("aantalgoed", aantalGoed);
         $(function () {
-            //variabele naar C# sturen
-            $("#inputaantalgoed").val(aantalGoed);
+            //variabelen naar input sturen
+            
+
             //Alleen nummers toestaan in tekstbox
             $("#antwoord").keypress(function (e) {
                 var a = [];
@@ -32,8 +32,9 @@
                     e.preventDefault();
             });
 
-            //Eerste button hiden.
+            //Eerste buttons hiden.
             $("#volgende").attr("hidden", true);
+            $("#divNaarResultaat").attr("hidden", true);
             
             //De vraag en voortgang in de desbetreffende divs zetten.
             $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in).");
@@ -113,19 +114,15 @@
                     src.appendChild(img);
                 }
                 if (voortgang == 50) {
-                    $("#volgende").attr("value", "Zie resultaat");
+                    $("#volgende").attr("hidden", true);
+                    $("#divNaarResultaat").attr("hidden", false);
+                    $("#inputaantalgoed").val(aantalGoed);
                 }
 
-            });
-
-            
+            });        
 
                 //Tweede button click functie.
-                $("#volgende").click(function () {
-                    if (voortgang == 50) {
-                        window.location = "../Leerlingresultaat.aspx"
-                    }
-                    else {
+                $("#volgende").click(function () {         
                         //Divs en buttons properties veranderen.
                         $("#antwoord").attr("readonly", false);
                         $("#volgende").attr("hidden", true);
@@ -145,12 +142,7 @@
                         antwoord = getal1 + getal2;
                         $("#vraag").empty();
                         $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in)");
-                    }
-
-                });
-        
-
-            
+                });           
         });
     </script>
 
@@ -172,10 +164,13 @@
     </div>
     <input type="button" id="zieAntwoord" value="Zie antwoord" />
     <input type="button" id="volgende" value="Volgende" />
+    <div id="divNaarResultaat">
+        <asp:Button ID="naarResultaat" Text="Naar resultaat" runat="server" OnClick="naarResultaat_Click" />
+    </div>
     <%-- Divs en inputs voor javascript variabelen --%>
     <div id="voortgang">
     </div>
     <div id="aantalgoed">
     </div>
-    <input type="hidden" name="aantalgoed" id="inputaantalgoed" />
+    <input type="hidden" name="inputaantalgoed" id="inputaantalgoed" />
 </asp:Content>

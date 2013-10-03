@@ -24,5 +24,21 @@ namespace ToetsendRekenen
             getalslider2 = Convert.ToInt32(slidergetal2);
         }
 
+        protected void naarResultaat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string aantalgoed = (this.Request.Form.Get("inputaantalgoed"));
+
+                Session.Add("aantalgoedsession", aantalgoed);
+
+                Response.Redirect("/Leerlingresultaat.aspx");
+            }
+            catch(Exception)
+            {
+                Response.Write("<script>alert('Er is iets fout gegaan!');</script>");
+            }
+        }
+
     }
 }

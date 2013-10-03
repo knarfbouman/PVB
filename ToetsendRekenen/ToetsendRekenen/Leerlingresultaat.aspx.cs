@@ -9,8 +9,12 @@ namespace ToetsendRekenen
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        public int aantalgoed;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string aantalGoedUitSessie = (string)Session["aantalgoedsession"];
+
+            aantalgoed = Convert.ToInt32(aantalGoedUitSessie);
 
         }
 
