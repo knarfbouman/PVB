@@ -68,7 +68,7 @@
     <Content Include="Stylesheets\inhoud.css" />
     <Content Include="Stylesheets\Layout.css" />
     <Content Include="Home.aspx" />
-    <Content Include="Opdracht1.aspx" />
+    <Content Include="Subcategorie.aspx" />
     <Content Include="MetSommenWerken.aspx">
       <BrowseToURL>~/MetSommenWerken.aspx</BrowseToURL>
     </Content>
@@ -99,12 +99,12 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Opdracht1.aspx.cs">
-      <DependentUpon>Opdracht1.aspx</DependentUpon>
+    <Compile Include="Subcategorie.aspx.cs">
+      <DependentUpon>Subcategorie.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Opdracht1.aspx.designer.cs">
-      <DependentUpon>Opdracht1.aspx</DependentUpon>
+    <Compile Include="Subcategorie.aspx.designer.cs">
+      <DependentUpon>Subcategorie.aspx</DependentUpon>
     </Compile>
     <Compile Include="MetSommenWerken.aspx.cs">
       <DependentUpon>MetSommenWerken.aspx</DependentUpon>
