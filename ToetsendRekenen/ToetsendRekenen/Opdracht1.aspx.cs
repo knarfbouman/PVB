@@ -22,13 +22,19 @@ namespace ToetsendRekenen
 
             if (head == "Opdracht 1")
             {
-                SubCategorie.Items.Clear();
+                SubCategorie.Items.Remove("optie 1");
+                SubCategorie.Items.Remove("optie 2");
+                SubCategorie.Items.Remove("optie 3");
+                SubCategorie.Items.Remove("optie 4");
+                SubCategorie.Items.Remove("optie 5");
                 SubCategorie.Items.Add("Erbijsommen");
                 SubCategorie.Items.Add("Erafsommen");
                 SubCategorie.Items.Add("Deelsommen");
                 SubCategorie.Items.Add("Keersommen");
                 SubCategorie.Items.Add("Gemixed");
+               
             }
+                
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -36,7 +42,9 @@ namespace ToetsendRekenen
 
             string getal1 = (this.Request.Form.Get("labeltest"));
            string getal2 = (this.Request.Form.Get("getal2"));
-           if ( Convert.ToString( RadioButtonList1.SelectedItem) != "" && Convert.ToString( SubCategorie.SelectedItem) !="")
+           string testhest = Convert.ToString(RadioButtonList1.SelectedItem);
+           string subcat = Convert.ToString(SubCategorie.SelectedItem);
+           if ( testhest != "" && subcat !="")
            {
 
                
@@ -44,22 +52,25 @@ namespace ToetsendRekenen
                string[] Subcatergoriearray = new string[4] { RadioButtonList1.SelectedItem.Text, SubCategorie.SelectedItem.Text, getal1, getal2 };
                
                Session.Add("subcategoriearray", Subcatergoriearray);
+               Response.Redirect("/MetSommenWerken.aspx");
+              
            }
            else
            {
                Response.Write("<script>alert('Je bent iets vergeten te selecteren!');</script>");
+               
            }
- 
+                
             }
 
         protected void SubCategorie_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void SubCategorie_SelectedIndexChanged1(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
