@@ -13,8 +13,10 @@
             //Alle variabelen.
             var aantalGoed = 0;
             var voortgang = 1;
-            var getal1 = Math.floor(Math.random() * 10) + 1;
-            var getal2 = Math.floor(Math.random() * 10) + 1;
+            var slidergetal1 = parseInt("<%=getalslider1%>");
+            var slidergetal2 = parseInt("<%=getalslider2%>");
+            var getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+            var getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
             var antwoord = getal1 + getal2;
 
             //Alleen nummers toestaan in tekstbox
@@ -109,40 +111,43 @@
                     var src = document.getElementById("sterren");
                     src.appendChild(img);
                 }
+                if (voortgang == 50) {
+                    $("#volgende").attr("value", "Zie resultaat");
+                }
+
             });
 
-            if (voortgang == 50) {
+            
+
                 //Tweede button click functie.
                 $("#volgende").click(function () {
-                    $("#volgende").attr("value", "Zie resultaat");
-                    window.location = "../Leerlingresultaat.aspx"
-                });
-            }
-            else {
-                //Tweede button click functie.
-                $("#volgende").click(function () {
-                    //Divs en buttons properties veranderen.
-                    $("#antwoord").attr("readonly", false);
-                    $("#volgende").attr("hidden", true);
-                    $("#zieAntwoord").attr("hidden", false);
-                    $("#uitleg").empty();
-                    $("#fout").attr("hidden", true);
-                    $("#goed").attr("hidden", true);
-                    $("#antwoord").val('');
-                    $("#antwoord").focus();
-                    $("#voortgang").empty();
-                    voortgang = voortgang + 1;
-                    $("#voortgang").append("vraag " + voortgang + " van 50");
+                    if (voortgang == 50) {
+                        window.location = "../Leerlingresultaat.aspx"
+                    }
+                    else {
+                        //Divs en buttons properties veranderen.
+                        $("#antwoord").attr("readonly", false);
+                        $("#volgende").attr("hidden", true);
+                        $("#zieAntwoord").attr("hidden", false);
+                        $("#uitleg").empty();
+                        $("#fout").attr("hidden", true);
+                        $("#goed").attr("hidden", true);
+                        $("#antwoord").val('');
+                        $("#antwoord").focus();
+                        $("#voortgang").empty();
+                        voortgang = voortgang + 1;
+                        $("#voortgang").append("vraag " + voortgang + " van 50");
 
-                    //Getallen opnieuw randomizen.
-                    getal1 = Math.floor(Math.random() * 10) + 1;
-                    getal2 = Math.floor(Math.random() * 10) + 1;
-                    antwoord = getal1 + getal2;
-                    $("#vraag").empty();
-                    $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in)");
+                        //Getallen opnieuw randomizen.
+                        getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                        getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                        antwoord = getal1 + getal2;
+                        $("#vraag").empty();
+                        $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in)");
+                    }
 
                 });
-            }
+        
 
             
         });
@@ -170,5 +175,4 @@
     </div>
     <div id="aantalgoed">
     </div>
-
 </asp:Content>
