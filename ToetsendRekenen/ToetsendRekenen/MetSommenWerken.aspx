@@ -111,29 +111,40 @@
                 }
             });
 
-            //Tweede button click functie.
-            $("#volgende").click(function () {
-                //Divs en buttons properties veranderen.
-                $("#antwoord").attr("readonly", false);
-                $("#volgende").attr("hidden", true);
-                $("#zieAntwoord").attr("hidden", false);
-                $("#uitleg").empty();
-                $("#fout").attr("hidden", true);
-                $("#goed").attr("hidden", true);
-                $("#antwoord").val('');
-                $("#antwoord").focus();
-                $("#voortgang").empty();
-                voortgang = voortgang + 1;
-                $("#voortgang").append("vraag " + voortgang + " van 50");
+            if (voortgang == 50) {
+                //Tweede button click functie.
+                $("#volgende").click(function () {
+                    $("#volgende").attr("value", "Zie resultaat");
+                    window.location = "../Leerlingresultaat.aspx"
+                });
+            }
+            else {
+                //Tweede button click functie.
+                $("#volgende").click(function () {
+                    //Divs en buttons properties veranderen.
+                    $("#antwoord").attr("readonly", false);
+                    $("#volgende").attr("hidden", true);
+                    $("#zieAntwoord").attr("hidden", false);
+                    $("#uitleg").empty();
+                    $("#fout").attr("hidden", true);
+                    $("#goed").attr("hidden", true);
+                    $("#antwoord").val('');
+                    $("#antwoord").focus();
+                    $("#voortgang").empty();
+                    voortgang = voortgang + 1;
+                    $("#voortgang").append("vraag " + voortgang + " van 50");
 
-                //Getallen opnieuw randomizen.
-                getal1 = Math.floor(Math.random() * 10) + 1;
-                getal2 = Math.floor(Math.random() * 10) + 1;
-                antwoord = getal1 + getal2;
-                $("#vraag").empty();
-                $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in)");
+                    //Getallen opnieuw randomizen.
+                    getal1 = Math.floor(Math.random() * 10) + 1;
+                    getal2 = Math.floor(Math.random() * 10) + 1;
+                    antwoord = getal1 + getal2;
+                    $("#vraag").empty();
+                    $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in)");
 
-            });
+                });
+            }
+
+            
         });
     </script>
 
