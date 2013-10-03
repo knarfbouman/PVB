@@ -1,24 +1,25 @@
 ﻿<%@ Page Title="Rekenen" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="MetSommenWerken.aspx.cs" Inherits="ToetsendRekenen.WebForm3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <link href="Stylesheets/banaan.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <script>
-        $(function () {
-            //Alle variabelen.
-            var aantalGoed = 0;
-            var voortgang = 1;
-            var slidergetal1 = parseInt("<%=getalslider1%>");
-            var slidergetal2 = parseInt("<%=getalslider2%>");
-            var getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-            var getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-            var antwoord = getal1 + getal2;
+        //Alle variabelen.
+        var aantalGoed = 0;
+        var voortgang = 1;
+        var slidergetal1 = parseInt("<%=getalslider1%>");
+        var slidergetal2 = parseInt("<%=getalslider2%>");
+        var getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+        var getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+        var antwoord = getal1 + getal2;
 
+        localStorage.setItem("aantalgoed", aantalGoed);
+        $(function () {
+            //variabele naar C# sturen
+            $("#inputaantalgoed").val(aantalGoed);
             //Alleen nummers toestaan in tekstbox
             $("#antwoord").keypress(function (e) {
                 var a = [];
@@ -171,8 +172,10 @@
     </div>
     <input type="button" id="zieAntwoord" value="Zie antwoord" />
     <input type="button" id="volgende" value="Volgende" />
+    <%-- Divs en inputs voor javascript variabelen --%>
     <div id="voortgang">
     </div>
     <div id="aantalgoed">
     </div>
+    <input type="hidden" name="aantalgoed" id="inputaantalgoed" />
 </asp:Content>

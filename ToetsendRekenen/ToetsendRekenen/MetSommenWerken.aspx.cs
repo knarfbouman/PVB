@@ -24,11 +24,5 @@ namespace ToetsendRekenen
             getalslider2 = Convert.ToInt32(slidergetal2);
         }
 
-        protected void zieAntwoord_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/home.aspx");
-
-        }
-
     }
 }
