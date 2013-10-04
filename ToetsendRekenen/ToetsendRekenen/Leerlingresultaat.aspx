@@ -5,10 +5,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script>
         var aantalgoed = parseInt("<%=aantalgoed%>");
+        var subcategorie = ("<%=subcategorie%>");
         var aantalsterren = Math.floor(aantalgoed / 10);
         var score = aantalgoed * 2;
         $(function () {
-            $("#resultaat").append("Je hebt " + aantalgoed + " vragen van de 50 vragen goed beantwoord en " + aantalsterren + " van de 5 sterren behaald.");
+            $("#resultaat").append("Je hebt " + aantalgoed + " vragen van de 50 vragen goed beantwoord en " + aantalsterren + " van de 5 sterren behaald voor "+ subcategorie + ".");
             $("#score").append("Score: " + score + "% van 100%.");
 
             if (aantalsterren == 1)

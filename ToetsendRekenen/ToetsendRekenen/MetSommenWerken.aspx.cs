@@ -12,6 +12,7 @@ namespace ToetsendRekenen
     {
         public int getalslider1;
         public int getalslider2;
+        public string moeilijkheidsgraad;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,9 +20,11 @@ namespace ToetsendRekenen
 
             string slidergetal1 = subcategoriearray[2];
             string slidergetal2 = subcategoriearray[3];
+            string moeilijkheidsgraadsession = subcategoriearray[0];
 
             getalslider1 = Convert.ToInt32(slidergetal1);
             getalslider2 = Convert.ToInt32(slidergetal2);
+            moeilijkheidsgraad = moeilijkheidsgraadsession;
         }
 
         protected void naarResultaat_Click(object sender, EventArgs e)
