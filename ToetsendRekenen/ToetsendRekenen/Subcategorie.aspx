@@ -44,8 +44,8 @@
      </asp:RadioButtonList>
   <br />
      <br />
-    <input type="hidden" name="labeltest"  id="labeltest" value ="0"  ></input>
-    <input type="hidden" name="getal2"  id="getal2" value ="100000"  ></input>
+    <input type="hidden" name="labeltest"  id="labeltest" value ="0"  />
+    <input type="hidden" name="getal2"  id="getal2" value ="100000"  />
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />
