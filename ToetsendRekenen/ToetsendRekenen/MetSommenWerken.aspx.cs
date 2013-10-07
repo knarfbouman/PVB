@@ -42,9 +42,7 @@ namespace ToetsendRekenen
 
                 string[] subcategoriearray = (string[])Session["subcategoriearray"];
 
-                string[] databasetest = string[null, subcategoriearray[5], subcategoriearray[1], aantalgoed, DateTime.Now];
 
-                TRend.Scores.Add(databasetest);
 
                 Response.Redirect("/Leerlingresultaat.aspx");
             }
