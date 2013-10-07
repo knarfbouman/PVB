@@ -9,7 +9,7 @@
     <script>
         //Alle variabelen.
         var aantalGoed = 0;
-        var voortgang = 1;
+        var voortgang = 49;
         var slidergetal1 = parseInt("<%=getalslider1%>");
         var slidergetal2 = parseInt("<%=getalslider2%>");
         var moeilijkheidsgraad = ("<%=moeilijkheidsgraad%>");
@@ -222,4 +222,5 @@
     </div>
     <div id="aantalgoed">
     </div>
+    <input type="hidden" id="inputaantalgoed" name="inputaantalgoed"/>
 </asp:Content>

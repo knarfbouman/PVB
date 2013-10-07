@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +12,8 @@ namespace ToetsendRekenen
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        Entities TRend = new Entities();
+
         public int getalslider1;
         public int getalslider2;
         public string moeilijkheidsgraad;
@@ -34,6 +38,13 @@ namespace ToetsendRekenen
                 string aantalgoed = (this.Request.Form.Get("inputaantalgoed"));
 
                 Session.Add("aantalgoedsession", aantalgoed);
+
+
+                string[] subcategoriearray = (string[])Session["subcategoriearray"];
+
+                string[] databasetest = string[null, subcategoriearray[5], subcategoriearray[1], aantalgoed, DateTime.Now];
+
+                TRend.Scores.Add(databasetest);
 
                 Response.Redirect("/Leerlingresultaat.aspx");
             }
