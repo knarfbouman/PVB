@@ -36,13 +36,16 @@ namespace ToetsendRekenen
             try
             {
                 string aantalgoed = (this.Request.Form.Get("inputaantalgoed"));
-
                 Session.Add("aantalgoedsession", aantalgoed);
-
-
                 string[] subcategoriearray = (string[])Session["subcategoriearray"];
 
+                SqlConnection sqlConn = new SqlConnection(@"data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot;");
+                SqlCommand sqlComm = new SqlCommand("INSERT INTO Scores (Categorienaam, Subcategorienaam, Score, Datum) Values ('" + subcategoriearray[1] + "' , '"
+                + subcategoriearray[5] + "' , '" + Convert.ToInt32(aantalgoed) * 2 + "' , '" + DateTime.Now + "'", sqlConn);
 
+                sqlConn.Open();
+                sqlComm.ExecuteNonQuery();
+                sqlConn.Close();
 
                 Response.Redirect("/Leerlingresultaat.aspx");
             }
