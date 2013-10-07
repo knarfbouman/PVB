@@ -66,7 +66,7 @@ namespace ToetsendRekenen
 
                
 
-               string[] Subcatergoriearray = new string[4] { RadioButtonList1.SelectedItem.Text, SubCategorie.SelectedItem.Text, getal1, getal2 };
+               string[] Subcatergoriearray = new string[5] { RadioButtonList1.SelectedItem.Text, SubCategorie.SelectedItem.Text, getal1, getal2,header };
                
                Session.Add("subcategoriearray", Subcatergoriearray);
                if (header == "Opdracht 1")
