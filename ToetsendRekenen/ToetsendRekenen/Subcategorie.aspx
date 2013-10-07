@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Opdracht1.aspx.cs" Inherits="ToetsendRekenen.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout.Master" AutoEventWireup="true" CodeBehind="Subcategorie.aspx.cs" Inherits="ToetsendRekenen.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -44,8 +44,8 @@
      </asp:RadioButtonList>
   <br />
      <br />
-    <input type="hidden" name="labeltest"  id="labeltest" value ="0"  ></input>
-    <input type="hidden" name="getal2"  id="getal2" value ="100000"  ></input>
+    <input type="hidden" name="labeltest"  id="labeltest" value ="0"  />
+    <input type="hidden" name="getal2"  id="getal2" value ="100000"  />
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />

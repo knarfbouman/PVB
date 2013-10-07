@@ -10,16 +10,37 @@ namespace ToetsendRekenen
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        public int getalslider1;
+        public int getalslider2;
+        public string moeilijkheidsgraad;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            
+            string[] subcategoriearray = (string[])Session["subcategoriearray"];
+
+            string slidergetal1 = subcategoriearray[2];
+            string slidergetal2 = subcategoriearray[3];
+            string moeilijkheidsgraadsession = subcategoriearray[0];
+
+            getalslider1 = Convert.ToInt32(slidergetal1);
+            getalslider2 = Convert.ToInt32(slidergetal2);
+            moeilijkheidsgraad = moeilijkheidsgraadsession;
         }
 
-        protected void zieAntwoord_Click(object sender, EventArgs e)
+        protected void naarResultaat_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/home.aspx");
+            try
+            {
+                string aantalgoed = (this.Request.Form.Get("inputaantalgoed"));
 
+                Session.Add("aantalgoedsession", aantalgoed);
+
+                Response.Redirect("/Leerlingresultaat.aspx");
+            }
+            catch(Exception)
+            {
+                Response.Write("<script>alert('Er is iets fout gegaan!');</script>");
+            }
         }
 
     }
