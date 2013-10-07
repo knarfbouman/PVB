@@ -21,18 +21,18 @@
         <br /><br />
         <asp:Label ID="Label3" runat="server" Text ="Maand:"></asp:Label>&nbsp&nbsp
     <asp:DropDownList ID="ddlMaand" runat="server" Width="120px" CSSclass="test" AppendDataBoundItems="true" >
-            <asp:ListItem>Januari</asp:ListItem>
-            <asp:ListItem>Februari</asp:ListItem>
-            <asp:ListItem>Maart</asp:ListItem>
-            <asp:ListItem>April</asp:ListItem>
-            <asp:ListItem>Mei</asp:ListItem>
-            <asp:ListItem>Juni</asp:ListItem>
-            <asp:ListItem>Juli</asp:ListItem>
-            <asp:ListItem>Augustus</asp:ListItem>
-            <asp:ListItem>September</asp:ListItem>
-            <asp:ListItem>Oktober</asp:ListItem>
-            <asp:ListItem>November</asp:ListItem>
-            <asp:ListItem>December</asp:ListItem>
+            <asp:ListItem Value="1">Januari</asp:ListItem>
+            <asp:ListItem Value="2">Februari</asp:ListItem>
+            <asp:ListItem Value="3">Maart</asp:ListItem>
+            <asp:ListItem Value="4">April</asp:ListItem>
+            <asp:ListItem Value="5">Mei</asp:ListItem>
+            <asp:ListItem Value="6">Juni</asp:ListItem>
+            <asp:ListItem Value="7">Juli</asp:ListItem>
+            <asp:ListItem Value="8">Augustus</asp:ListItem>
+            <asp:ListItem Value="9">September</asp:ListItem>
+            <asp:ListItem Value="10">Oktober</asp:ListItem>
+            <asp:ListItem Value="11">November</asp:ListItem>
+            <asp:ListItem Value="12">December</asp:ListItem>
     </asp:DropDownList>&nbsp&nbsp&nbsp&nbsp
         <asp:Button ID="Button2" runat="server" Text="Bekijk gegevens" Width="109px" OnClick="Button2_Click" />
         <br /><br />
@@ -44,7 +44,7 @@
     <input type="text" id="TextBox2" class="test" style="width:95px" name="textbox2" />
         <asp:Label ID="Label6" runat="server" Text ="tot:"></asp:Label>
     <input type="text" id="TextBox3" class="test" style="width:95px" name="textbox3" />
-        <asp:Button ID="Button4" runat="server" Text="Bekijk gegevens" Width="109px" OnClick="Button4_Click" />
+        <asp:Button ID="Button4" runat="server" Text="Bekijk gegevens" Width="109px" OnClick="Button4_Click" style="height: 26px" />
         <br /><br />
         </div>
 
@@ -95,7 +95,7 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "-3:+3",
-                dateFormat: "dd-mm-yy"
+                dateFormat: "yy-mm-dd"
             })
         });
         $(function () {
@@ -103,7 +103,7 @@
                 changeMonth: true,
                 changeYear: true,
                 yearRange: "-3:+3",
-                dateFormat: "dd-mm-yy"
+                dateFormat: "yy-mm-dd"
             })
         });
     </script>
