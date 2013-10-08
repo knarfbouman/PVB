@@ -20,7 +20,7 @@ namespace ToetsendRekenen
                 Response.Redirect("/home.aspx");
             }
 
-            if (head == "Opdracht 1")
+            if (head == "Met Sommen Werken")
             {
                 
                 SubCategorie.Items.Remove("optie 1");
@@ -69,7 +69,7 @@ namespace ToetsendRekenen
                string[] Subcatergoriearray = new string[5] { RadioButtonList1.SelectedItem.Text, SubCategorie.SelectedItem.Text, getal1, getal2,header };
                
                Session.Add("subcategoriearray", Subcatergoriearray);
-               if (header == "Opdracht 1")
+               if (header == "Met Sommen Werken")
                {
                    Response.Redirect("/MetSommenWerken.aspx");
                }
@@ -83,7 +83,7 @@ namespace ToetsendRekenen
            else
            {
                string head = Convert.ToString(Session["header"]);
-               if (head == "Opdracht 1")
+               if (head == "Met Sommen Werken")
                {
 
                    SubCategorie.Items.Remove("Erbijsommen");
