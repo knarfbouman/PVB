@@ -19,6 +19,9 @@ namespace ToetsendRekenen
             {
                 //Response.Redirect("/Login.aspx");
             }
+
+
+
         }
 
         protected void btnWijzig_Click(object sender, EventArgs e)
@@ -65,8 +68,6 @@ namespace ToetsendRekenen
             string van = (this.Request.Form.Get("textbox2"));
             string tot = (this.Request.Form.Get("textbox3"));
 
-            //TREnt.BetweenDates(van, tot);
-
             SqlConnection sqlconn = new SqlConnection(@"data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot;");
             sqlconn.Open();
             SqlCommand sqlcom = new SqlCommand("SELECT * FROM Scores WHERE Datum between '" + van + "' and '" + tot + "'",  sqlconn);
@@ -87,7 +88,7 @@ namespace ToetsendRekenen
         {
             SqlConnection sqlconn = new SqlConnection(@"data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot;");
             sqlconn.Open();
-            SqlCommand sqlcom = new SqlCommand("SELECT Datepart(mm," + ddlMaand.SelectedValue + ") from scores", sqlconn);
+            SqlCommand sqlcom = new SqlCommand("select * from Scores where DATEPART(mm, Datum) = " + ddlMaand.SelectedValue + "", sqlconn);
             
             SqlDataReader reader;
             DataTable dt = new DataTable();
