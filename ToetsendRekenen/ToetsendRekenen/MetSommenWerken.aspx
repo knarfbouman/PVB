@@ -5,7 +5,7 @@
     <link href="Stylesheets/banaan.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
     <script>
         //Alle variabelen.
         var aantalGoed = 0;
@@ -13,6 +13,8 @@
         var slidergetal1 = parseInt("<%=getalslider1%>");
         var slidergetal2 = parseInt("<%=getalslider2%>");
         var moeilijkheidsgraad = ("<%=moeilijkheidsgraad%>");
+        var subcategorie = ("<%=subcategorie%>");
+
 
         var getal1 = 0;
         var getal2 = 0;
@@ -44,39 +46,113 @@
         }
         UpdateTime();
         var counter = setInterval(UpdateTime, 1000);
-
+        
+        //Maak random vraag, NIET AAN DE MATH.RANDOM ZITTEN!!
         function maakVraag() {
-            if (moeilijkheidsgraad == "Makkelijk") {
-                getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                antwoord = getal1 + getal2;
+            if (subcategorie == "Erbijsommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    antwoord = getal1 + getal2;
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 + floatgetal2).toFixed(2).toString().replace('.', ',');
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 + floatgetal2).toFixed(4).toString().replace('.', ',');
+                }
             }
-            else if (moeilijkheidsgraad == "Normaal") {
-                getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
-                getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
-                floatgetal1 = parseFloat(getal1);
-                floatgetal2 = parseFloat(getal2);
-                antwoord = (floatgetal1 + floatgetal2).toString().replace('.', ',');
+            else if (subcategorie == "Keersommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    antwoord = getal1 * getal2;
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 * floatgetal2).toFixed(2).toString().replace('.', ',');
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 * floatgetal2).toFixed(4).toString().replace('.', ',');
+                }
             }
-            else if (moeilijkheidsgraad == "Moeilijk") {
-                getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
-                getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
-                floatgetal1 = parseFloat(getal1);
-                floatgetal2 = parseFloat(getal2);
-                antwoord = (floatgetal1 + floatgetal2).toFixed(4).toString().replace('.', ',');
+            else if (subcategorie == "Erafsommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    getal1 = Math.floor(Math.random() * (slidergetal2 - slidergetal1)) + slidergetal1;
+                    getal2 = Math.floor(Math.random() * (slidergetal2 - slidergetal1)) + slidergetal1;
+                    if (getal1 < getal2) {
+                        maakVraag();
+                    }
+                    else {
+                        antwoord = getal1 - getal2;
+                    }
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 - floatgetal2).toFixed(2).toString().replace('.', ',');
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 - floatgetal2).toFixed(4).toString().replace('.', ',');
+                }
             }
         }
 
         function toonVraag() {
             $("#vraag").empty();
-            if (moeilijkheidsgraad == "Makkelijk") {
-                $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in).");
+            if (subcategorie == "Erbijsommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    $("#vraag").append("Wat is " + getal1 + " + " + getal2 + "? (Vul een heel getal in).");
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " + " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot twee cijfers achter de komma).");
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " + " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot vier cijfers achter de komma).");
+                }
             }
-            else if (moeilijkheidsgraad == "Normaal") {
-                $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " + " + floatgetal2.toString().replace('.', ',') + "? (Één tot twee cijfers achter de komma).");
+            else if (subcategorie == "Keersommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    $("#vraag").append("Wat is " + getal1 + " x " + getal2 + "? (Vul een heel getal in).");
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " x " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot twee cijfers achter de komma).");
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " x " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot vier cijfers achter de komma).");
+                }
             }
-            else if (moeilijkheidsgraad == "Moeilijk") {
-                $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " + " + floatgetal2.toString().replace('.', ',') + "? (Één tot vijf cijfers achter de komma).");
+            else if (subcategorie == "Erafsommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    $("#vraag").append("Wat is " + getal1 + " - " + getal2 + "? (Vul een heel getal in).");
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " - " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot twee cijfers achter de komma).");
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " - " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot vier cijfers achter de komma).");
+                }
             }
         }
 
