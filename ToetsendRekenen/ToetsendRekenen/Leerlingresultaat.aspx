@@ -12,45 +12,11 @@
             $("#resultaat").append("Je hebt " + aantalgoed + " vragen van de 50 vragen goed beantwoord en " + aantalsterren + " van de 5 sterren behaald voor "+ subcategorie + ".");
             $("#score").append("Score: " + score + "% van 100%.");
 
-            if (aantalsterren == 1)
-            {
+            for (var i = 0; i < Math.floor(aantalgoed / 10) ; i++) {
                 var img = document.createElement("img");
                 img.src = "Images/ster.jpg";
 
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            if (aantalsterren == 2)
-            {
-                var img = document.createElement("img");
-                img.src = "Images/2sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            if (aantalsterren == 3)
-            {
-                var img = document.createElement("img");
-                img.src = "Images/3sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            if (aantalsterren == 4)
-            {
-                var img = document.createElement("img");
-                img.src = "Images/4sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
-            }
-            if (aantalsterren == 5)
-            {
-                var img = document.createElement("img");
-                img.src = "Images/5sterren.jpg";
-
-                var src = document.getElementById("sterren");
-                src.appendChild(img);
+                $('#sterren').append(img);
             }
         });
     </script>

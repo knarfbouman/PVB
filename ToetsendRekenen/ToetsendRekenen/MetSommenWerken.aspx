@@ -21,7 +21,7 @@
         var antwoord = 0;
 
         var sTime = new Date().getTime();
-        var countDown = 5;
+        var countDown = 1500;
 
         function UpdateTime() {
             var cTime = new Date().getTime();
@@ -35,11 +35,15 @@
             } else {
                 $("#countdown").hide();
                 $("#aftercount").show();
+                $("#antwoord").attr("readonly", true);
+                $("#divNaarResultaat").attr("hidden", false);
+                $("#volgende").attr("hidden", true);
+                $("#zieAntwoord").attr("hidden", true);
                 clearInterval(counter);
             }
         }
         UpdateTime();
-        var counter = setInterval(UpdateTime, 500);
+        var counter = setInterval(UpdateTime, 1000);
 
         function maakVraag() {
             if (moeilijkheidsgraad == "Makkelijk") {
@@ -77,14 +81,6 @@
         }
 
         $(function () {
-           
-            if (countDown == 1) {
-                alert(countDown);
-                $("#antwoord").attr("readonly", true);
-                $("#naarResultaat").attr("hidden", false);
-                $("#volgende").attr("hidden", true);
-                $("#zieAntwoord").attr("hidden", true);
-            }
 
             maakVraag();
 
@@ -222,7 +218,7 @@
     <input type="hidden" id="inputaantalgoed" name="inputaantalgoed"/>
 
     <div id="countdown">
-    <div id="minutes" style="float:left">00</div>
+    <div id="minutes" style="float:left">25</div>
     <div style="float:left">:</div>
     <div id="seconds" style="float:left">00</div>
     </div>
