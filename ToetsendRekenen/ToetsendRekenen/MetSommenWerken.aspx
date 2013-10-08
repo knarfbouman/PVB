@@ -107,14 +107,24 @@
                     getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
                     floatgetal1 = parseFloat(getal1);
                     floatgetal2 = parseFloat(getal2);
-                    antwoord = (floatgetal1 - floatgetal2).toFixed(2).toString().replace('.', ',');
+                    if (getal1 < getal2) {
+                        maakVraag();
+                    }
+                    else {
+                        antwoord = (floatgetal1 - floatgetal2).toFixed(2).toString().replace('.', ',');
+                    }
                 }
                 else if (moeilijkheidsgraad == "Moeilijk") {
                     getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
                     getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(4);
                     floatgetal1 = parseFloat(getal1);
                     floatgetal2 = parseFloat(getal2);
-                    antwoord = (floatgetal1 - floatgetal2).toFixed(4).toString().replace('.', ',');
+                    if (getal1 < getal2) {
+                        maakVraag();
+                    }
+                    else {
+                        antwoord = (floatgetal1 - floatgetal2).toFixed(4).toString().replace('.', ',');
+                    }
                 }
             }
         }
