@@ -76,3 +76,17 @@ display:inline-block;
 width:100%;
 
 }
+
+
+#getallen {
+display:inline-block;
+width:900px;
+}
+
+#getallenlijnimage {
+text-align:center;
+}
+
+#getallen #getal1 {
+float:right;
+}
