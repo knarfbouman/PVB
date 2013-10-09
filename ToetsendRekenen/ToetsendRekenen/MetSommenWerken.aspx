@@ -128,6 +128,32 @@
                     }
                 }
             }
+            if (subcategorie == "Deelsommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    if (parseInt(getal1) < parseInt(getal2)) {
+                        maakVraag();
+                    }
+                    else {
+                        antwoord = parseInt(getal1 / getal2);
+                    }      
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 / floatgetal2).toFixed(2).toString().replace('.', ',');
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    getal2 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(2);
+                    floatgetal1 = parseFloat(getal1);
+                    floatgetal2 = parseFloat(getal2);
+                    antwoord = (floatgetal1 / floatgetal2).toFixed(4).toString().replace('.', ',');
+                }
+            }
         }
 
         function toonVraag() {
@@ -163,6 +189,17 @@
                 }
                 else if (moeilijkheidsgraad == "Moeilijk") {
                     $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " - " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot vier cijfers achter de komma).");
+                }
+            }
+            else if (subcategorie == "Deelsommen") {
+                if (moeilijkheidsgraad == "Makkelijk") {
+                    $("#vraag").append("Wat is " + getal1 + " / " + getal2 + "? (Afronden tot een heel getal).");
+                }
+                else if (moeilijkheidsgraad == "Normaal") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " / " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot twee cijfers achter de komma).");
+                }
+                else if (moeilijkheidsgraad == "Moeilijk") {
+                    $("#vraag").append("Wat is " + floatgetal1.toString().replace('.', ',') + " / " + floatgetal2.toString().replace('.', ',') + "? (Afronden tot vier cijfers achter de komma).");
                 }
             }
         }
@@ -228,13 +265,38 @@
                 //Uitleg erbij zetten.
                 $("#uitleg").empty();
 
-                if (moeilijkheidsgraad == "Makkelijk") {
-                    $("#uitleg").append("Stel je hebt " + getal1 + ", dan tel je er " + getal2 + "  bij. Het antwoord is dus " + antwoord + "!")
+                if (subcategorie == "Erbijsommen") {
+                    if (moeilijkheidsgraad == "Makkelijk") {
+                        $("#uitleg").append("Stel je hebt " + getal1 + ", dan tel je er " + getal2 + "  bij. Het antwoord is dus " + antwoord + "!")
+                    }
+                    else {
+                        $("#uitleg").append("Stel je hebt " + floatgetal1.toString().replace('.', ',') + ", dan tel je er " + floatgetal2.toString().replace('.', ',') + "  bij. Het antwoord is dus " + antwoord.replace('.', ',') + "!")
+                    }
                 }
-                else {
-                    $("#uitleg").append("Stel je hebt " + floatgetal1.toString().replace('.', ',') + ", dan tel je er " + floatgetal2.toString().replace('.', ',') + "  bij. Het antwoord is dus " + antwoord.replace('.', ',') + "!")
+                else if (subcategorie == "Erafsommen") {
+                    if (moeilijkheidsgraad == "Makkelijk") {
+                        $("#uitleg").append("Stel je hebt " + getal1 + ", dan haal je er " + getal2 + "  af. Het antwoord is dus " + antwoord + "!")
+                    }
+                    else {
+                        $("#uitleg").append("Stel je hebt " + floatgetal1.toString().replace('.', ',') + ", dan haal je er " + floatgetal2.toString().replace('.', ',') + "  af. Het antwoord is dus " + antwoord.replace('.', ',') + "!")
+                    }
                 }
-                
+                else if (subcategorie == "Keersommen") {
+                    if (moeilijkheidsgraad == "Makkelijk") {
+                        $("#uitleg").append("Stel je hebt " + getal1 + ", dan vermenigvuldig je het met " + getal2 + ". Het antwoord is dus " + antwoord + "!")
+                    }
+                    else {
+                        $("#uitleg").append("Stel je hebt " + floatgetal1.toString().replace('.', ',') + ", dan vermenigvuldig je het met " + floatgetal2.toString().replace('.', ',') + ". Het antwoord is dus " + antwoord.replace('.', ',') + "!")
+                    }
+                }
+                else if (subcategorie == "Deelsommen") {
+                    if (moeilijkheidsgraad == "Makkelijk") {
+                        $("#uitleg").append("Stel je hebt " + getal1 + ", dan deel je het door " + getal2 + ". Het antwoord is dus " + antwoord + "!")
+                    }
+                    else {
+                        $("#uitleg").append("Stel je hebt " + floatgetal1.toString().replace('.', ',') + ", dan deel je het door " + floatgetal2.toString().replace('.', ',') + ". Het antwoord is dus " + antwoord.replace('.', ',') + "!")
+                    }
+                }
 
                 //Image voor sterren erbij zetten.
                 $('#sterren').empty();

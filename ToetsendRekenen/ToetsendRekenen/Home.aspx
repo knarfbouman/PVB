@@ -5,7 +5,7 @@
 
             <div id="ButtonRow1">
             <asp:Button ID="Opdracht1" runat="server" Text="Met Sommen Werken" CSSclass="Button" OnClick="Opdracht1_Click"/>
-            <asp:Button ID="Opdracht2" runat="server" Text="Opdracht 2" CSSclass="Button" OnClick="Opdracht2_Click"/>
+            <asp:Button ID="Opdracht2" runat="server" Text="Getallenlijn" CSSclass="Button" OnClick="Opdracht2_Click"/>
             <asp:Button ID="Opdracht3" runat="server" Text="Opdracht 3" CSSclass="Button" OnClick="Opdracht3_Click"/>
             </div>
             <div id="ButtonRow2">

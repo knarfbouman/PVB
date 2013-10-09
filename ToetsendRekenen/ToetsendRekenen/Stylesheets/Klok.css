@@ -1,0 +1,23 @@
+﻿.clock {
+    background: url(http://www.clker.com/cliparts/k/u/9/J/q/a/clock-face-no-hands-md.png);
+    height: 300px;
+    width: 300px;
+}
+
+.clock .hand {
+    background: #000;
+    height: 100px;
+    position: absolute;
+    width: 5px;
+    margin: 50px 0px 0px 148px;
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    -o-transform-origin: 80% 80% 0;
+    -moz-transform-origin: 80% 80% 0;
+    transform-origin: bottom;
+}
+
+.clock .little.hand {
+    height: 60px;
+    margin-top: 90px;
+}

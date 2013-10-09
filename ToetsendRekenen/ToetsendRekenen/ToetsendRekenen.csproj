@@ -67,6 +67,7 @@
     <Content Include="Images\Goodguygetallenlijn.png" />
     <Content Include="Stylesheets\banaan.css" />
     <Content Include="Stylesheets\inhoud.css" />
+    <Content Include="Stylesheets\Klok.css" />
     <Content Include="Stylesheets\Layout.css" />
     <Content Include="Home.aspx" />
     <Content Include="Subcategorie.aspx" />
