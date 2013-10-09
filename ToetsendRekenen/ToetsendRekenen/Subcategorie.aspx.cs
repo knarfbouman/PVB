@@ -9,11 +9,13 @@ namespace ToetsendRekenen
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+        public string categorie;
         protected void Page_Load(object sender, EventArgs e)
         {
             string head = Convert.ToString(Session["header"]);
             opdrachtlbl.Text = head;
-          
+
+            categorie = head;
             
             if (head == "")
             {

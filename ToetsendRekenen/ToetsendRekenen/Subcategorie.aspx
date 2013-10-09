@@ -49,9 +49,16 @@
     <asp:Button ID="Button1" runat="server" Text="Start" Width="130px" OnClick="Button1_Click" />
   
     <br />
+    
 <script>
-    $(function () {    
-        var valMap = [1, 10, 100, 1000, 10000, 100000];
+    var categorie = ("<%=categorie%>");
+    $(function () {
+        if (categorie == "Getallenlijn") {
+            var valMap = [1, 10, 100];
+        }
+        else {
+            var valMap = [1, 10, 100, 1000, 10000, 100000];
+        }
         $("#slider-range").slider({
             range: true,
             min: 0,
