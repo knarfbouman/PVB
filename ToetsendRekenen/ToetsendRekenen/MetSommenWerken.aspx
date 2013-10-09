@@ -25,7 +25,8 @@
         //Variabelen voor de timer.
         var sTime = new Date().getTime();
         var countDown = 1500;
-
+        
+        //Timer
         function UpdateTime() {
             var cTime = new Date().getTime();
             var diff = cTime - sTime;
@@ -188,6 +189,7 @@
             }
         }
 
+        //Vraag op te website laten zien.
         function toonVraag() {
             $("#vraag").empty();
             if (subcategorie == "Erbijsommen") {
