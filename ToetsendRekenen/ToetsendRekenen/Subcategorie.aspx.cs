@@ -37,7 +37,7 @@ namespace ToetsendRekenen
             }
 
 
-            if (head == "Opdracht 2")
+            if (head == "Getallenlijn")
             {
 
                 SubCategorie.Items.Remove("optie 1");
@@ -74,9 +74,9 @@ namespace ToetsendRekenen
                    Response.Redirect("/MetSommenWerken.aspx");
                }
 
-               if (header == "Opdracht 2")
+               if (header == "Getallenlijn")
                {
-                   Response.Redirect("/Tijdlijn.aspx");
+                   Response.Redirect("/Getallenlijn.aspx");
                }
 
            }
