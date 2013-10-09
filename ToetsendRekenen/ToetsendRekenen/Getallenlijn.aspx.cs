@@ -14,8 +14,11 @@ namespace ToetsendRekenen
             string[] Instellingenarray = (string[])Session["subcategoriearray"];
             if (Instellingenarray != null)
             {
+                int firstnumber = Convert.ToInt16(Instellingenarray[2]);
                 
 
+                Label1.Text = Convert.ToString(firstnumber);
+                Label2.Text = Convert.ToString(Instellingenarray[3]);
 
 
 
