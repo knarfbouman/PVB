@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div id="headeropdracht">
-<asp:Label ID="opdrachtlbl" runat="server" Font-Size="25" Text="Opdracht#" ></asp:Label>
+         .<asp:Label ID="opdrachtlbl" runat="server" Font-Size="25" Text="Opdracht#" ></asp:Label>
     
      
    

@@ -15,9 +15,25 @@ namespace ToetsendRekenen
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            
+
             if (Session["Admin"] != "Admin")
             {
                 //Response.Redirect("/Login.aspx");
+            }
+
+            if (!IsPostBack )
+            {
+
+                int jaar = DateTime.Now.Year;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    ddlJaar.Items.Add(jaar.ToString());
+                    jaar--;
+                }
+
             }
 
 
@@ -102,5 +118,42 @@ namespace ToetsendRekenen
             sqlconn.Close();
 
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(@"data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot;");
+            sqlconn.Open();
+            SqlCommand sqlcom = new SqlCommand("select * from Scores where DATEPART(yy, Datum) = " + ddlJaar.SelectedItem.ToString() + "", sqlconn);
+
+            SqlDataReader reader;
+            DataTable dt = new DataTable();
+            reader = sqlcom.ExecuteReader();
+
+
+            dt.Load(reader);
+
+            DataGrid.DataSource = dt;
+            DataGrid.DataBind();
+            sqlconn.Close();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlconn = new SqlConnection(@"data source=www.dbss.nl;initial catalog=PVB1314-004;persist security info=True;user id=frmiok;password=ROC;MultipleActiveResultSets=True;App=EntityFramework&quot;");
+            sqlconn.Open();
+            SqlCommand sqlcom = new SqlCommand("select * from Scores where DATEPART(ww, Datum) = " + tbweek.Text + "", sqlconn);
+
+            SqlDataReader reader;
+            DataTable dt = new DataTable();
+            reader = sqlcom.ExecuteReader();
+
+
+            dt.Load(reader);
+
+            DataGrid.DataSource = dt;
+            DataGrid.DataBind();
+            sqlconn.Close();
+        }
+
     }
 }
