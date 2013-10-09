@@ -64,8 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\banaan.jpg" />
+    <Content Include="Images\Goodguygetallenlijn.png" />
     <Content Include="Stylesheets\banaan.css" />
     <Content Include="Stylesheets\inhoud.css" />
+    <Content Include="Stylesheets\Klok.css" />
     <Content Include="Stylesheets\Layout.css" />
     <Content Include="Home.aspx" />
     <Content Include="Subcategorie.aspx" />
@@ -76,7 +78,7 @@
     <Content Include="Login.aspx" />
     <Content Include="AdminView.aspx" />
     <Content Include="Okke.aspx" />
-    <Content Include="Tijdlijn.aspx" />
+    <Content Include="Getallenlijn.aspx" />
     <Content Include="Klokkijken.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -161,12 +163,12 @@
     <Compile Include="Okke.aspx.designer.cs">
       <DependentUpon>Okke.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tijdlijn.aspx.cs">
-      <DependentUpon>Tijdlijn.aspx</DependentUpon>
+    <Compile Include="Getallenlijn.aspx.cs">
+      <DependentUpon>Getallenlijn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tijdlijn.aspx.designer.cs">
-      <DependentUpon>Tijdlijn.aspx</DependentUpon>
+    <Compile Include="Getallenlijn.aspx.designer.cs">
+      <DependentUpon>Getallenlijn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Klokkijken.aspx.cs">
       <DependentUpon>Klokkijken.aspx</DependentUpon>

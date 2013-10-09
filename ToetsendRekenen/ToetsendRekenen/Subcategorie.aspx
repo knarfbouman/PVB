@@ -51,7 +51,7 @@
     <br />
 <script>
     $(function () {    
-        var valMap = [0, 10, 100, 1000, 10000, 100000];
+        var valMap = [1, 10, 100, 1000, 10000, 100000];
         $("#slider-range").slider({
             range: true,
             min: 0,

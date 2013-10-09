@@ -73,6 +73,37 @@ float:right;
 
 #testhestbest {
 display:inline-block;
-width:100%;
+width:80%;
 
+}
+
+
+#getallen {
+display:inline-block;
+width:900px;
+}
+
+#getallenlijnimage {
+text-align:center;
+}
+
+#getallen #getal1 {
+position:absolute;
+right:380px;
+}
+#getallen #getal2 {
+position:absolute;
+right:540px;
+}
+#getallen #getal3 {
+position:absolute;
+left:800px;
+}
+#getallen #getal4 {
+position:absolute;
+left:600px;
+}
+#getallen #getal5 {
+position:absolute;
+left:400px;
 }
