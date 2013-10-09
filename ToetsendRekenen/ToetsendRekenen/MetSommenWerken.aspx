@@ -132,12 +132,10 @@
                 if (moeilijkheidsgraad == "Makkelijk") {
                     getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
                     getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                    if (parseInt(getal1) < parseInt(getal2)) {
-                        maakVraag();
+                    while (antwoord %0)
+                    {
+                        antwoord = getal1 / getal2;   
                     }
-                    else {
-                        antwoord = parseInt(getal1 / getal2);
-                    }      
                 }
                 else if (moeilijkheidsgraad == "Normaal") {
                     getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
