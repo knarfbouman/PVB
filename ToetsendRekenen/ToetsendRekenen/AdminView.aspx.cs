@@ -15,9 +15,6 @@ namespace ToetsendRekenen
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            
-
             if (Session["Admin"] != "Admin")
             {
                 //Response.Redirect("/Login.aspx");
@@ -25,7 +22,6 @@ namespace ToetsendRekenen
 
             if (!IsPostBack )
             {
-
                 int jaar = DateTime.Now.Year;
 
                 for (int i = 0; i < 4; i++)
@@ -33,11 +29,7 @@ namespace ToetsendRekenen
                     ddlJaar.Items.Add(jaar.ToString());
                     jaar--;
                 }
-
             }
-
-
-
         }
 
         protected void btnWijzig_Click(object sender, EventArgs e)
