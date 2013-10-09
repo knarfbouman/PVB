@@ -80,6 +80,7 @@
     <Content Include="Okke.aspx" />
     <Content Include="Getallenlijn.aspx" />
     <Content Include="Klokkijken.aspx" />
+    <Content Include="BreukenSpel.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs">
@@ -176,6 +177,13 @@
     </Compile>
     <Compile Include="Klokkijken.aspx.designer.cs">
       <DependentUpon>Klokkijken.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BreukenSpel.aspx.cs">
+      <DependentUpon>BreukenSpel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BreukenSpel.aspx.designer.cs">
+      <DependentUpon>BreukenSpel.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
