@@ -133,9 +133,41 @@
                     getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
                     if (getal1 % 2 == 0) {
                         getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                        if (getal2 % 2 == 0) {
+                            if (getal1 > getal2) {
+                                if(getal1 / getal2 == Math.round(getal1 / getal2)){
+                                    antwoord = getal1 / getal2;
+                                }
+                                else{
+                                    maakVraag();
+                                }
+                            }
+                            else {
+                                maakVraag();
+                            }
+                        }
+                        else {
+                            maakVraag();
+                        }
                     }
                     else {
                         getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                        if (getal2 % 2 != 0) {
+                            if (getal1 > getal2) {
+                                if (getal1 / getal2 == Math.round(getal1 / getal2)) {
+                                    antwoord = getal1 / getal2;
+                                }
+                                else {
+                                    maakVraag();
+                                }
+                            }
+                            else {
+                                maakVraag();
+                            }
+                        }
+                        else {
+                            maakVraag();
+                        }
                     }
 
                 }

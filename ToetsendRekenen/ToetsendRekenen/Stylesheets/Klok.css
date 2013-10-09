@@ -11,7 +11,7 @@
     width: 5px;
     margin: 50px 0px 0px 148px;
     -webkit-transform-origin: bottom;
-    -ms-transform-origin: bottom;
+    -ms-transform-origin: 80% 80% 0;
     -o-transform-origin: 80% 80% 0;
     -moz-transform-origin: 80% 80% 0;
     transform-origin: bottom;
