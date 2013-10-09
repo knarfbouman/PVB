@@ -15,9 +15,9 @@
     <div id="Dropdownlistsmargin">
         <asp:Label Font-Size="X-Large" Text="Statistieken" runat="server"></asp:Label><br /><br />
     <asp:Label ID="Label2" runat="server" Text ="Jaar:"></asp:Label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <asp:DropDownList ID="DropDownList1" runat="server" Width="120px">
+        <asp:DropDownList ID="ddlJaar" runat="server" Width="120px" />
     </asp:DropDownList>&nbsp&nbsp&nbsp&nbsp
-        <asp:Button ID="Button3" runat="server" Text="Bekijk gegevens" Width="109px" />
+        <asp:Button ID="Button3" runat="server" Text="Bekijk gegevens" Width="109px" OnClick="Button3_Click" />
         <br /><br />
         <asp:Label ID="Label3" runat="server" Text ="Maand:"></asp:Label>&nbsp&nbsp
     <asp:DropDownList ID="ddlMaand" runat="server" Width="120px" CSSclass="test" AppendDataBoundItems="true" >
@@ -38,7 +38,7 @@
         <br /><br />
         <asp:Label ID="Label4" runat="server" Text ="Week:"></asp:Label>&nbsp&nbsp&nbsp&nbsp  
     <asp:TextBox ID="tbweek" runat="server" Width="120px" CSSclass="test" ></asp:TextBox>&nbsp&nbsp&nbsp&nbsp
-        <asp:Button ID="Button1" runat="server" Text="Bekijk gegevens" Width="109px" />
+        <asp:Button ID="Button1" runat="server" Text="Bekijk gegevens" Width="109px" OnClick="Button1_Click" />
         <br /><br />
            <asp:Label ID="Label5" runat="server" Text ="Van:"></asp:Label>
     <input type="text" id="TextBox2" class="test" style="width:95px" name="textbox2" />
