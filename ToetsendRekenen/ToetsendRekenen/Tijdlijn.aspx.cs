@@ -11,22 +11,7 @@ namespace ToetsendRekenen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            string[] Instellingenarray = (string[])Session["subcategoriearray"];
-            if (Instellingenarray != null)
-            {
-                
 
-
-
-
-
-
-            }
-            else
-            {
-                Response.Redirect("/Home.aspx");
-            }
             
         }
     }
