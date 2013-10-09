@@ -55,18 +55,24 @@
     $(function () {
         if (categorie == "Getallenlijn") {
             var valMap = [1, 10, 100];
+            var values = [0, 3];
+            var pizza = valMap[0];
+            var getal2 = valMap[2];
         }
         else {
             var valMap = [1, 10, 100, 1000, 10000, 100000];
+            var values = [0, 5];
+            var pizza = valMap[0];
+            var getal2 = valMap[5];
         }
         $("#slider-range").slider({
             range: true,
             min: 0,
             max: valMap.length - 1,
-            values: [0, 100],
+            values: values,
             slide: function (event, ui) {
-                var pizza = valMap[ui.values[0]];
-                var getal2 = valMap[ui.values[1]];
+                pizza = valMap[ui.values[0]];
+                getal2 = valMap[ui.values[1]];
                 $("#labeltest").val(pizza);
                     $("#getal2").val(getal2);
                 $("#amount").val(valMap[ui.values[0]] + " - " + valMap[ui.values[1]]);
@@ -75,7 +81,8 @@
         });
         $("#amount").val(valMap[$("#slider-range").slider("values", 0)] +
         " - " + valMap[$("#slider-range").slider("values", 1)]);
-        
+        $("#labeltest").val(pizza);
+        $("#getal2").val(getal2);
     });
 
 </script>
