@@ -131,11 +131,13 @@
             if (subcategorie == "Deelsommen") {
                 if (moeilijkheidsgraad == "Makkelijk") {
                     getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                    getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                    while (antwoord %0)
-                    {
-                        antwoord = getal1 / getal2;   
+                    if (getal1 % 2 == 0) {
+                        getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
                     }
+                    else {
+                        getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
+                    }
+
                 }
                 else if (moeilijkheidsgraad == "Normaal") {
                     getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
