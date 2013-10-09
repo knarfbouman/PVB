@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <script>
-        //Alle variabelen.
+        //Globale variabelen.
         var aantalGoed = 0;
         var voortgang = 1;
         var slidergetal1 = parseInt("<%=getalslider1%>");
@@ -15,13 +15,14 @@
         var moeilijkheidsgraad = ("<%=moeilijkheidsgraad%>");
         var subcategorie = ("<%=subcategorie%>");
 
-
+        //Variabelen voor de random getallen.
         var getal1 = 0;
         var getal2 = 0;
         var floatgetal1 = 0;
         var floatgetal2 = 0;
         var antwoord = 0;
-
+        
+        //Variabelen voor de timer.
         var sTime = new Date().getTime();
         var countDown = 1500;
 

@@ -77,6 +77,7 @@
     <Content Include="AdminView.aspx" />
     <Content Include="Okke.aspx" />
     <Content Include="Tijdlijn.aspx" />
+    <Content Include="Klokkijken.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs">
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="Tijdlijn.aspx.designer.cs">
       <DependentUpon>Tijdlijn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Klokkijken.aspx.cs">
+      <DependentUpon>Klokkijken.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Klokkijken.aspx.designer.cs">
+      <DependentUpon>Klokkijken.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
