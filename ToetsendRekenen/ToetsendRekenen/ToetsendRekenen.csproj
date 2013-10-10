@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\banaan.jpg" />
+    <Content Include="Images\clock-clipart-6.png" />
     <Content Include="Images\Goodguygetallenlijn.png" />
     <Content Include="Stylesheets\banaan.css" />
     <Content Include="Stylesheets\inhoud.css" />

@@ -9,9 +9,10 @@
     height: 100px;
     position: absolute;
     width: 5px;
+    background-color: blue;
     margin: 50px 0px 0px 148px;
     -webkit-transform-origin: bottom;
-    -ms-transform-origin: bottom;
+    -ms-transform-origin: 80% 80% 0;
     -o-transform-origin: 80% 80% 0;
     -moz-transform-origin: 80% 80% 0;
     transform-origin: bottom;
@@ -20,4 +21,6 @@
 .clock .little.hand {
     height: 60px;
     margin-top: 90px;
+    background-color: red;
+    z-index:5;
 }

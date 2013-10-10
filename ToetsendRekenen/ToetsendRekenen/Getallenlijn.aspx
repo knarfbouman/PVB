@@ -17,7 +17,7 @@
         <asp:Label ID="Label5" runat="server" Text="50" Font-Size="24"></asp:Label>
                 </div>
             <div id="getal4">
-    <asp:Label ID="Label4" runat="server" Text="label4" Font-Size="24"></asp:Label>
+    <asp:Label ID="Label4" runat="server" Text="30" Font-Size="24"></asp:Label>
                 </div>
             <div id="getal5">
         

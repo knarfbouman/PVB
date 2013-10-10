@@ -25,7 +25,8 @@
         //Variabelen voor de timer.
         var sTime = new Date().getTime();
         var countDown = 1500;
-
+        
+        //Timer
         function UpdateTime() {
             var cTime = new Date().getTime();
             var diff = cTime - sTime;
@@ -47,8 +48,12 @@
         }
         UpdateTime();
         var counter = setInterval(UpdateTime, 1000);
-        
+
         //Maak random vraag, NIET AAN DE MATH.RANDOM ZITTEN!!
+        function getRandomGetal() {
+            return Math.floor(Math.random() * (slidergetal2 - slidergetal1)) + slidergetal1; 
+        }
+
         function maakVraag() {
             if (subcategorie == "Erbijsommen") {
                 if (moeilijkheidsgraad == "Makkelijk") {
@@ -130,12 +135,11 @@
             }
             if (subcategorie == "Deelsommen") {
                 if (moeilijkheidsgraad == "Makkelijk") {
-                    getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                    getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                    while (antwoord %0)
-                    {
-                        antwoord = getal1 / getal2;   
-                    }
+                    do {
+                        getal1 = getRandomGetal();
+                        getal2 = getRandomGetal();
+                        antwoord = getal1 / getal2;
+                    } while( Math.floor( antwoord ) != antwoord );
                 }
                 else if (moeilijkheidsgraad == "Normaal") {
                     getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
@@ -154,6 +158,7 @@
             }
         }
 
+        //Vraag op te website laten zien.
         function toonVraag() {
             $("#vraag").empty();
             if (subcategorie == "Erbijsommen") {
