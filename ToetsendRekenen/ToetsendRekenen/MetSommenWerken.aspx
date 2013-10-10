@@ -48,7 +48,6 @@
         }
         UpdateTime();
         var counter = setInterval(UpdateTime, 1000);
-        
         //Maak random vraag, NIET AAN DE MATH.RANDOM ZITTEN!!
         function maakVraag() {
             if (subcategorie == "Erbijsommen") {
