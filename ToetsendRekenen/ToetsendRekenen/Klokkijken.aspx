@@ -8,8 +8,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <div>
+        Hoe laat is het?
+    </div>
+
     <script>
         $(function () {
+            var kleineWijzer = 0;
+            var groteWijzer = 0;
             function setRotation(obj, rotation) {
                 obj.css({
                     "-webkit-transform": "rotate(" + rotation + "deg)",
@@ -25,8 +31,23 @@
             }
 
             $('.clock').click(function () {
-                setRotation($('.little.hand'), getRandomRotation());
-                setRotation($('.big.hand'), getRandomRotation());
+                var tijdStip = Math.random() * (60 * 24);
+                var randomUurVanDeDag = Math.floor(tijdStip / 60);
+                var randomMinuutVanDeDag = Math.floor(tijdStip / 2);
+                var percentageKleineWijzer = Math.round((randomMinuutVanDeDag / 720) * 100);
+                var uur = Math.floor(randomMinuutVanDeDag / 60);
+                kleineWijzer = (360 / 100) * percentageKleineWijzer;       
+
+                var tussenBerekening = Math.floor(randomMinuutVanDeDag / 60) * 60;       
+                var minuten = randomMinuutVanDeDag - tussenBerekening;
+                var percentageGroteWijzer = Math.round((minuten / 60) * 100);
+
+                groteWijzer = (360 / 100) * percentageGroteWijzer;
+
+                setRotation($('.little.hand'), kleineWijzer);
+                setRotation($('.big.hand'), groteWijzer);
+                $("#tijd").empty();
+                $("#tijd").append("Het is " + uur + " uur en " + minuten + " minuten");
             });
         });
     </script>
@@ -35,5 +56,7 @@
     <div class="little hand"></div>
     <div class="big hand"></div>
 
+    </div>
+    <div id="tijd">
     </div>
 </asp:Content>

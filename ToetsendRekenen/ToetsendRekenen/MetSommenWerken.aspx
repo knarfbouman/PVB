@@ -49,6 +49,10 @@
         UpdateTime();
         var counter = setInterval(UpdateTime, 1000);
         //Maak random vraag, NIET AAN DE MATH.RANDOM ZITTEN!!
+        function getRandomGetal() {
+            return Math.floor(Math.random() * (slidergetal2 - slidergetal1)) + slidergetal1; 
+        }
+
         function maakVraag() {
             if (subcategorie == "Erbijsommen") {
                 if (moeilijkheidsgraad == "Makkelijk") {
@@ -130,46 +134,11 @@
             }
             if (subcategorie == "Deelsommen") {
                 if (moeilijkheidsgraad == "Makkelijk") {
-                    getal1 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                    if (getal1 % 2 == 0) {
-                        getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                        if (getal2 % 2 == 0) {
-                            if (getal1 > getal2) {
-                                if(getal1 / getal2 == Math.round(getal1 / getal2)){
+                    do {
+                        getal1 = getRandomGetal();
+                        getal2 = getRandomGetal();
                                     antwoord = getal1 / getal2;
-                                }
-                                else{
-                                    maakVraag();
-                                }
-                            }
-                            else {
-                                maakVraag();
-                            }
-                        }
-                        else {
-                            maakVraag();
-                        }
-                    }
-                    else {
-                        getal2 = Math.floor(Math.random() * slidergetal2) + slidergetal1;
-                        if (getal2 % 2 != 0) {
-                            if (getal1 > getal2) {
-                                if (getal1 / getal2 == Math.round(getal1 / getal2)) {
-                                    antwoord = getal1 / getal2;
-                                }
-                                else {
-                                    maakVraag();
-                                }
-                            }
-                            else {
-                                maakVraag();
-                            }
-                        }
-                        else {
-                            maakVraag();
-                        }
-                    }
-
+                    } while( Math.floor( antwoord ) != antwoord );
                 }
                 else if (moeilijkheidsgraad == "Normaal") {
                     getal1 = (Math.random() * (slidergetal2 - slidergetal1) + slidergetal1).toFixed(1);
