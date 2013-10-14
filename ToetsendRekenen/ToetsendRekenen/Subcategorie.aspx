@@ -52,12 +52,22 @@
     
 <script>
     var categorie = ("<%=categorie%>");
+    
     $(function () {
         if (categorie == "Getallenlijn") {
-            var valMap = [1, 10, 100];
-            var values = [0, 3];
-            var pizza = valMap[0];
-            var getal2 = valMap[2];
+      
+
+                var valMap = [0, 100];
+                var values = [0, 2];
+                var pizza = valMap[0];
+                var getal2 = valMap[1];
+            
+           
+                var valMap = [0,10, 100];
+                var values = [0, 3];
+                var pizza = valMap[0];
+                var getal2 = valMap[2];
+            
         }
         else {
             var valMap = [1, 10, 100, 1000, 10000, 100000];

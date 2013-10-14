@@ -14,11 +14,64 @@ namespace ToetsendRekenen
             string[] Instellingenarray = (string[])Session["subcategoriearray"];
             if (Instellingenarray != null)
             {
-                int firstnumber = Convert.ToInt16(Instellingenarray[2]);
-                
+                string subcategorie = Instellingenarray[1];
+                if (subcategorie == "Getallen")
+                {
+                    int firstnumber = Convert.ToInt16(Instellingenarray[2]);
+                    int lastnumber = Convert.ToInt16(Instellingenarray[3]);
+                    Random randomer = new Random();
+                    int randomlastnumber = randomer.Next(firstnumber, lastnumber);
+                    do
+                    {
+                        randomlastnumber = randomer.Next(firstnumber, lastnumber);
+                    }
+                    while (randomlastnumber < 4);
+                    double getal1 = Convert.ToDouble(randomlastnumber * 0.3);
+                    double getal2 = Convert.ToDouble(randomlastnumber * 0.5);
+                    double getal3 = Convert.ToDouble(randomlastnumber * 0.8);
+                    double verlijkgetal1 = Math.Floor(getal1);
+                    double verlijkgetal2 = Math.Floor(getal2);
+                    double verlijkgetal3 = Math.Floor(getal3);
+                    do{
+                        randomlastnumber = randomer.Next(firstnumber, lastnumber);
+                        getal1 = Convert.ToDouble(randomlastnumber * 0.3);
+                     getal2 = Convert.ToDouble(randomlastnumber * 0.5);
+                     getal3 = Convert.ToDouble(randomlastnumber * 0.8);
+                     verlijkgetal1 = Math.Floor(getal1);
+                     verlijkgetal2 = Math.Floor(getal2);
+                     verlijkgetal3 = Math.Floor(getal3);
 
-                Label1.Text = Convert.ToString(firstnumber);
-                Label2.Text = Convert.ToString(Instellingenarray[3]);
+                    }
+                    
+                    while(verlijkgetal1 != getal1 || verlijkgetal2 !=getal2 || verlijkgetal3 != getal3 || randomlastnumber == 0);
+                    Label1.Text = Convert.ToString(firstnumber);
+                    Label2.Text = Convert.ToString(randomlastnumber);
+                    Label4.Text = Convert.ToString(getal1);
+                    Label5.Text = Convert.ToString(getal2);
+                    Label3.Text = Convert.ToString(getal3);
+
+                }
+                if (subcategorie == "Kommagetallen")
+                {
+
+                    int firstnumber = Convert.ToInt16(Instellingenarray[2]);
+                    int lastnumber = Convert.ToInt16(Instellingenarray[3]);
+                    Random randomer = new Random();
+                    int randomlastnumber = randomer.Next(firstnumber, lastnumber);
+                    do
+                    {
+                        randomlastnumber = randomer.Next(firstnumber, lastnumber);
+                    }
+                    while (randomlastnumber < 4);
+
+
+                    Label1.Text = Convert.ToString(firstnumber);
+                    Label2.Text = Convert.ToString(randomlastnumber);
+                    Label4.Text = Convert.ToString(randomlastnumber * 0.3);
+                    Label5.Text = Convert.ToString(randomlastnumber * 0.5);
+                    Label3.Text = Convert.ToString(randomlastnumber * 0.8);
+                }
+                
 
 
 

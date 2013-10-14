@@ -9,6 +9,7 @@ namespace ToetsendRekenen
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
+       
         public string categorie;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -94,7 +95,7 @@ namespace ToetsendRekenen
                    SubCategorie.Items.Remove("Keersommen");
                    SubCategorie.Items.Remove("Gemixed");
                }
-               if (head == "Opdracht 2")
+               if (head == "Getallenlijn")
                {
                    SubCategorie.Items.Remove("Getallen");
                    SubCategorie.Items.Remove("Kommagetallen");
