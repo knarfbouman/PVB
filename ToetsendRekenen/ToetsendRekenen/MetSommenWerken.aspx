@@ -48,7 +48,6 @@
         }
         UpdateTime();
         var counter = setInterval(UpdateTime, 1000);
-
         //Maak random vraag, NIET AAN DE MATH.RANDOM ZITTEN!!
         function getRandomGetal() {
             return Math.floor(Math.random() * (slidergetal2 - slidergetal1)) + slidergetal1; 
@@ -138,7 +137,7 @@
                     do {
                         getal1 = getRandomGetal();
                         getal2 = getRandomGetal();
-                        antwoord = getal1 / getal2;
+                                    antwoord = getal1 / getal2;
                     } while( Math.floor( antwoord ) != antwoord );
                 }
                 else if (moeilijkheidsgraad == "Normaal") {
