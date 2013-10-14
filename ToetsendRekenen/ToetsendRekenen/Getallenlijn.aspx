@@ -23,5 +23,6 @@
         
             <asp:Label ID="Label1" runat="server" Text="0" Font-Size="24"></asp:Label>
     </div>
+            <asp:Image ID="Pijl" runat="server" ImageUrl="~/Images/pijl.png" />
             </div>
     </asp:Content>
