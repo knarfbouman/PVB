@@ -21,6 +21,7 @@ namespace ToetsendRekenen
             double goedantwoord;
             double foutantwoord1;
             double foutantwoord2;
+            double foutantwoord3;
             
             string[] Instellingenarray = (string[])Session["subcategoriearray"];
             if (Instellingenarray != null)
@@ -139,10 +140,13 @@ namespace ToetsendRekenen
                     {
                         int randomfoutgetal = randomer.Next(1, 6);
                         int randomfoutgetal2 = randomer.Next(2, 7);
+                        double randomfoutgetal3 = randomer.Next(1, 10);
+                        double komma = randomfoutgetal3 / 10;
                         foutantwoord1 = goedantwoord - randomfoutgetal;
                         foutantwoord2 = goedantwoord + randomfoutgetal2;
+                        foutantwoord3 = Math.Round( goedantwoord * komma);
                     }
-                    while (foutantwoord1 == goedantwoord || foutantwoord2 == goedantwoord || foutantwoord1 == foutantwoord2 || foutantwoord1 < 1 || foutantwoord2 < 1 || foutantwoord1 > randomlastnumber || foutantwoord2 > randomlastnumber || foutantwoord1 == randomlastnumber || foutantwoord2 == randomlastnumber);
+                    while (foutantwoord1 == goedantwoord || foutantwoord2 == goedantwoord || foutantwoord3 == goedantwoord || foutantwoord1 == foutantwoord2 || foutantwoord2 == foutantwoord3 || foutantwoord1 == foutantwoord3 || foutantwoord1 < 1 || foutantwoord2 < 1 || foutantwoord3 < 1 || foutantwoord1 > randomlastnumber || foutantwoord2 > randomlastnumber || foutantwoord3 > randomlastnumber || foutantwoord1 == randomlastnumber || foutantwoord2 == randomlastnumber || foutantwoord3 == randomlastnumber);
                     
 
                     Label1.Text = Convert.ToString(firstnumber);
@@ -154,34 +158,43 @@ namespace ToetsendRekenen
                     int randompositie1;
                     int randompositie2;
                     int randompositie3;
+                    int randompositie4;
 
                     do
                     {
-                        randompositie1 = randomer.Next(0, 4);
+                        randompositie1 = randomer.Next(0, 5);
                     }
                     while (randompositie1 == 0);
                     do
                     {
-                        randompositie2 = randomer.Next(0, 4);
+                        randompositie2 = randomer.Next(0, 5);
 
                     }
                     while (randompositie2 == 0 || randompositie2 == randompositie1);
 
                     do
                     {
-                        randompositie3 = randomer.Next(0, 4);
+                        randompositie3 = randomer.Next(0, 5);
 
                     }
                     while (randompositie3 == 0 || randompositie3 == randompositie2 || randompositie3 == randompositie1);
+                    do
+                    {
+                        randompositie4 = randomer.Next(0, 5);
+
+                    }
+                    while (randompositie4 == 0 || randompositie4 == randompositie2 || randompositie4 == randompositie1 || randompositie4 == randompositie3);
                     if (IsPostBack == false)
                     {
+                        RadioButtonList1.Items.Add(Convert.ToString(0));
                         RadioButtonList1.Items.Add(Convert.ToString(0));
                         RadioButtonList1.Items.Add(Convert.ToString(0));
                         RadioButtonList1.Items.Add(Convert.ToString(0));
                     }
                     RadioButtonList1.Items[randompositie1 -1].Text = Convert.ToString(foutantwoord1);
                     RadioButtonList1.Items[randompositie2 -1].Text = Convert.ToString(foutantwoord2);
-                    RadioButtonList1.Items[randompositie3 -1].Text = Convert.ToString(goedantwoord);
+                    RadioButtonList1.Items[randompositie3 - 1].Text = Convert.ToString(foutantwoord3);
+                    RadioButtonList1.Items[randompositie4 -1].Text = Convert.ToString(goedantwoord);
 
                 }
                 if (subcategorie == "Kommagetallen")
@@ -226,7 +239,7 @@ namespace ToetsendRekenen
                 aantalvragen++;
                 lblvragen.Text = "Vraag " + aantalvragen + " van 50";
                 Session["aantalvragen"] = aantalvragen;
-
+                
             }
         }
     }
