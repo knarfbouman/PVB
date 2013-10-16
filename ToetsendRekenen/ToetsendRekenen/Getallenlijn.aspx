@@ -24,5 +24,13 @@
             <asp:Label ID="Label1" runat="server" Text="0" Font-Size="24"></asp:Label>
     </div>
             <asp:Image ID="Pijl" runat="server" ImageUrl="~/Images/pijl.png" />
+            
             </div>
+    <br />
+    <br />
+    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            </asp:RadioButtonList>
+    <asp:Button ID="nextbutton" runat="server" Text="Volgende" OnClick="nextbutton_Click" />
+    <br />
+    <asp:Label ID="lblvragen" runat="server" Text=""></asp:Label>
     </asp:Content>
