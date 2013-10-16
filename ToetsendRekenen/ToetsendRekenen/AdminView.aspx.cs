@@ -85,8 +85,7 @@ namespace ToetsendRekenen
             reader = sqlcom.ExecuteReader();
 
 
-            dt.Load(reader);
-
+            dt.Load(reader);    
             DataGrid.DataSource = dt;
             DataGrid.DataBind();
             sqlconn.Close();
