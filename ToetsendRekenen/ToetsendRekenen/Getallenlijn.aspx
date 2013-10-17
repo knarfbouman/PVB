@@ -33,4 +33,6 @@
     <asp:Button ID="nextbutton" runat="server" Text="Volgende" OnClick="nextbutton_Click" />
     <br />
     <asp:Label ID="lblvragen" runat="server" Text=""></asp:Label>
+    <br />
+    <asp:Label ID="lblgoed" runat="server" Text=""></asp:Label>
     </asp:Content>
