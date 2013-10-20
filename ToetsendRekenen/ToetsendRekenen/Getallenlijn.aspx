@@ -3,6 +3,8 @@
     <link href="Stylesheets/inhoud.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <img src="Images/ster.jpg;" id ="ster" />
+    <br />
     <div id="getallenlijnimage">
     <img id="getallenlijn" src="Images/Goodguygetallenlijn.png" />
     </div>

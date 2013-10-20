@@ -27,7 +27,7 @@ namespace ToetsendRekenen
             {
                 int aantalvragen = Convert.ToInt16(Session["aantalvragen"]);
                 int aantalvragengoed = Convert.ToInt16(Session["aantalvragengoed"]);
-                lblgoed.Text = "Vraag " + aantalvragengoed + " van " + aantalvragen + " goed";
+                lblgoed.Text =  aantalvragengoed + "/" + aantalvragen + " goed";
             }
             else
             {

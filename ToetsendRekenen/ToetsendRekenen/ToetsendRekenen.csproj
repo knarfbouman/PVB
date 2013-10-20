@@ -67,6 +67,7 @@
     <Content Include="Images\clock-clipart-6.png" />
     <Content Include="Images\Goodguygetallenlijn.png" />
     <Content Include="Images\pijl.png" />
+    <Content Include="Images\ster.jpg" />
     <Content Include="Stylesheets\banaan.css" />
     <Content Include="Stylesheets\inhoud.css" />
     <Content Include="Stylesheets\Klok.css" />
