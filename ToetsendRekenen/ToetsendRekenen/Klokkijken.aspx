@@ -160,7 +160,7 @@
                 $("#uitleg").removeAttr("hidden");
 
                 //If else kijkt of het antwoord goed is.
-                if($("#radioAntwoord1").attr('checked', 'checked')){           
+                if(document.getElementById('radioAntwoord1').checked){           
                     $("#goed").removeAttr("hidden");
                     aantalGoed = aantalGoed + 1;
                 }
