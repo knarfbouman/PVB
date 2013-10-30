@@ -10,15 +10,17 @@ namespace ToetsendRekenen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToString(Convert.ToString(Session["aantalvragen"])) != null)
+            if (Convert.ToInt16(Session["aantalvragen"]) != 0)
             {
                 int aantalvragen = Convert.ToInt16(Session["aantalvragen"]);
                 lblvragen.Text = "Vraag " + aantalvragen + " van 50";
             }
             else
             {
-                lblvragen.Text = "Vraag " + 0 + " van 50";
+                lblvragen.Text = "Vraag " + 1 + " van 50";
+                Session["aantalvragen"] = 1;
             }
+            
 
 
 
@@ -27,7 +29,7 @@ namespace ToetsendRekenen
             {
                 int aantalvragen = Convert.ToInt16(Session["aantalvragen"]);
                 int aantalvragengoed = Convert.ToInt16(Session["aantalvragengoed"]);
-                lblgoed.Text =  aantalvragengoed + "/" + aantalvragen + " goed";
+                lblgoed.Text =  aantalvragengoed + "/" + (aantalvragen -1) + " goed";
                 if (aantalvragengoed == 10 || aantalvragengoed > 10 && aantalvragengoed < 20)
                 {
                     sterren.ImageUrl = "~/Images/ster.jpg";
@@ -38,11 +40,15 @@ namespace ToetsendRekenen
                 }
                 if (aantalvragengoed == 30 || aantalvragengoed > 30 && aantalvragengoed < 40)
                 {
-                    sterren.ImageUrl = "~/Images/ster.jpg";
+                    sterren.ImageUrl = "~/Images/3sterren.jpg";
                 }
                 if (aantalvragengoed == 40 || aantalvragengoed > 40 && aantalvragengoed < 50)
                 {
-                    sterren.ImageUrl = "~/Images/ster.jpg";
+                    sterren.ImageUrl = "~/Images/4sterren.jpg";
+                }
+                if (aantalvragengoed == 50)
+                {
+                    sterren.ImageUrl = "~/Images/5sterren.jpg";
                 }
                 
             }
@@ -110,7 +116,7 @@ namespace ToetsendRekenen
                             verlijkgetal1 = Math.Floor(getal1);
                             verlijkgetal2 = Math.Floor(getal2);
                             verlijkgetal3 = Math.Floor(getal3);
-                            int randompijl = randomer.Next(1, 7);
+                            int randompijl = randomer.Next(1, 9);
                             if (randompijl == 1)
                             {
                                 Pijl.CssClass = "eerste";
@@ -141,13 +147,23 @@ namespace ToetsendRekenen
                                 Pijl.CssClass = "negende";
                                 pijlgetal = randomlastnumber * 0.9;
                             }
+                            if (randompijl == 7)
+                            {
+                                Pijl.CssClass = "derde";
+                                pijlgetal = randomlastnumber * 0.3;
+                            }
+                            if (randompijl == 8)
+                            {
+                                Pijl.CssClass = "achtste";
+                                pijlgetal = randomlastnumber * 0.8;
+                            }
                             nietpijlgetal = Math.Floor(pijlgetal);
 
 
 
                         }
 
-                        while (verlijkgetal1 != getal1 || verlijkgetal2 != getal2 || verlijkgetal3 != getal3 || randomlastnumber == 0 || nietpijlgetal != pijlgetal);
+                        while (verlijkgetal1 != getal1 || verlijkgetal2 != getal2 || verlijkgetal3 != getal3 || randomlastnumber == 0 || nietpijlgetal != pijlgetal || pijlgetal <2);
                         #endregion
 
 
@@ -160,18 +176,18 @@ namespace ToetsendRekenen
                             int randomfoutgetal2 = randomer.Next(2, 7);
                             double randomfoutgetal3 = randomer.Next(1, 10);
                             double komma = randomfoutgetal3 / 10;
-                            foutantwoord1 = goedantwoord - randomfoutgetal;
+                            foutantwoord1 = goedantwoord + randomfoutgetal;
                             foutantwoord2 = goedantwoord + randomfoutgetal2;
                             foutantwoord3 = Math.Round(goedantwoord * komma);
                         }
-                        while (foutantwoord1 == goedantwoord || foutantwoord2 == goedantwoord || foutantwoord3 == goedantwoord || foutantwoord1 == foutantwoord2 || foutantwoord2 == foutantwoord3 || foutantwoord1 == foutantwoord3 || foutantwoord1 < 1 || foutantwoord2 < 1 || foutantwoord3 < 1 || foutantwoord1 > randomlastnumber || foutantwoord2 > randomlastnumber || foutantwoord3 > randomlastnumber || foutantwoord1 == randomlastnumber || foutantwoord2 == randomlastnumber || foutantwoord3 == randomlastnumber);
+                        while (foutantwoord1 == goedantwoord || foutantwoord2 == goedantwoord || foutantwoord3 == goedantwoord || foutantwoord1 == foutantwoord2 || foutantwoord2 == foutantwoord3 || foutantwoord1 == foutantwoord3 || foutantwoord1 < 1 || foutantwoord2 < 1 || foutantwoord3 < 1 ||  foutantwoord1 == randomlastnumber || foutantwoord2 == randomlastnumber || foutantwoord3 == randomlastnumber);
                         #endregion
 
                         Label1.Text = Convert.ToString(firstnumber);
                         Label2.Text = Convert.ToString(randomlastnumber);
-                        Label4.Text = Convert.ToString(getal1);
+                        
                         Label5.Text = Convert.ToString(getal2);
-                        Label3.Text = Convert.ToString(getal3);
+                        
                         #region antwoordenpositioneren
                         int randompositie1;
                         int randompositie2;
@@ -242,9 +258,9 @@ namespace ToetsendRekenen
 
                         Label1.Text = Convert.ToString(firstnumber);
                         Label2.Text = Convert.ToString(randomlastnumber);
-                        Label4.Text = Convert.ToString(randomlastnumber * 0.3);
+                      
                         Label5.Text = Convert.ToString(randomlastnumber * 0.5);
-                        Label3.Text = Convert.ToString(randomlastnumber * 0.8);
+                       
                         #endregion
                     }
 
@@ -296,7 +312,16 @@ namespace ToetsendRekenen
                     }
                     else
                     {
-                        Response.Redirect("Leerlingresultaat.aspx");
+                        getallenlijn.Visible = false;
+                        RadioButtonList1.Items.Clear();
+                        nextbutton.Enabled = false;
+                        Pijl.Visible = false;
+                        Label1.Visible = false;
+                        Label2.Visible = false;
+                        
+                        Label5.Visible = false;
+
+                        
                     }
                 }
             }

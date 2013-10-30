@@ -5,23 +5,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     &nbsp;<br />
     <asp:Image ID="sterren" runat="server" />
+    
     <br />
     
     <div id="getallenlijnimage">
-    <img id="getallenlijn" src="Images/Goodguygetallenlijn.png" />
+        <asp:Image ID="getallenlijn" ImageUrl="~/Images/Goodguygetallenlijn.png" runat="server" />
+    
     </div>
         <div id="getallen" >
             <div id="getal1">
     <asp:Label ID="Label2" runat="server" Text="100" Font-Size="24"></asp:Label>
       </div>
             <div id ="getal2">
-    <asp:Label ID="Label3" runat="server" Text="80" Font-Size="24"></asp:Label>
    </div>
             <div id ="getal3">
         <asp:Label ID="Label5" runat="server" Text="50" Font-Size="24"></asp:Label>
                 </div>
             <div id="getal4">
-    <asp:Label ID="Label4" runat="server" Text="30" Font-Size="24"></asp:Label>
                 </div>
             <div id="getal5">
         

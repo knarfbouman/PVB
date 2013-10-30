@@ -118,6 +118,10 @@ left:28%;
 position:absolute;
 left:33%;
 }
+#getallen .derde {
+position:absolute;
+left:38%;
+}
 #getallen .vierde {
 position:absolute;
 left:43%;
@@ -129,6 +133,10 @@ left:53%;
 #getallen .zevende {
 position:absolute;
 left:57%;
+}
+#getallen .achtste {
+position:absolute;
+left:63%;
 }
 #getallen .negende {
 position:absolute;
