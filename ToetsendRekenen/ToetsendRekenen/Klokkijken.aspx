@@ -30,13 +30,7 @@
         var aantalGoed = 0;
         var voortgang = 1;
 
-        //Variabelen voor de timer.
-        var sTime = new Date().getTime();
-        var countDown = 1500;
-
-        
-
-        $(function () {
+         $(function () {
             //randomize radiobuttons
             (function ($) {
 
@@ -62,6 +56,9 @@
 
             $('#beginButton').click(function () {
                 //Timer
+                var sTime = new Date().getTime();
+                var countDown = 1500;
+
                 function UpdateTime() {
                     var cTime = new Date().getTime();
                     var diff = cTime - sTime;
@@ -118,6 +115,9 @@
                 uur = Math.floor(randomMinuutVanDeDag / 60);
                 tussenBerekening = Math.floor(randomMinuutVanDeDag / 60) * 60;
                 minuten = randomMinuutVanDeDag - tussenBerekening;
+                if (uur == 0) {
+                    uur = 12;
+                }
                 return uur;
             };
 
@@ -137,6 +137,11 @@
 
                 setRotation($('.little.hand'), kleineWijzer);
                 setRotation($('.big.hand'), groteWijzer);
+
+                if (uur == 0){
+                    uur = 12;
+                }
+                
                 $("#antwoord1").empty();
                 $("#antwoord1").append("Het is " + uur + " uur en " + minuten + " minuten.");
                 $("#antwoord2").empty();
@@ -160,7 +165,7 @@
                 $("#uitleg").removeAttr("hidden");
 
                 //If else kijkt of het antwoord goed is.
-                if($("#radioAntwoord1").attr('checked', 'checked')){           
+                if(document.getElementById('radioAntwoord1').checked){           
                     $("#goed").removeAttr("hidden");
                     aantalGoed = aantalGoed + 1;
                 }
@@ -251,7 +256,7 @@
     <input type="button" id="zieAntwoord" value="Zie antwoord" />
     <input type="button" id="volgende" value="Volgende" />
     <div id="divNaarResultaat">
-        <asp:Button ID="naarResultaat" Text="Naar resultaat" runat="server"/>
+        <asp:Button ID="naarResultaat" Text="Naar resultaat" runat="server" OnClick="naarResultaat_Click" />
     </div>
     <%-- Divs en inputs voor javascript variabelen --%>
     <div id="voortgang">
