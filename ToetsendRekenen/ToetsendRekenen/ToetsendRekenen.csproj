@@ -196,7 +196,9 @@
     <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <EntityDeploy Include="ToetsendRekenenEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ToetsendRekenenEntity.Designer.cs</LastGenOutput>
@@ -215,6 +217,7 @@
       <DependentUpon>ToetsendRekenenEntity.edmx</DependentUpon>
       <LastGenOutput>ToetsendRekenenEntity.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\MichaelFrank.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

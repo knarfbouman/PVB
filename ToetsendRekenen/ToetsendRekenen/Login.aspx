@@ -13,7 +13,7 @@
     </div>
     <div id="ButtonLogin">
     <asp:Button ID="btnLogin" runat="server" Text="Log in" CssClass="ButtonLogin" OnClick="btnLogin_Click" />
-        <asp:Label ID="lblError" runat="server" Text="" CssClass="lblError"></asp:Label>
+    <asp:Label ID="lblError" runat="server" Text="" CssClass="lblError"></asp:Label>
     </div>
     </div>
 </asp:Content>
