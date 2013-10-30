@@ -1,8 +1,10 @@
 ﻿.clock {
-    background: url(http://www.clker.com/cliparts/k/u/9/J/q/a/clock-face-no-hands-md.png);
+    background-image: url(/Images/clockface_numbers01.jpg);
     height: 300px;
     width: 300px;
 }
+
+
 
 .clock .hand {
     background: #000;
@@ -21,6 +23,6 @@
 .clock .little.hand {
     height: 60px;
     margin-top: 90px;
-    background-color: red;
+    background-color: hotpink;
     z-index:5;
 }

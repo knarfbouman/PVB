@@ -29,6 +29,7 @@
         var percentageGroteWijzer = 0;
         var aantalGoed = 0;
         var voortgang = 1;
+        var newUur = 0;
 
          $(function () {
             //randomize radiobuttons
@@ -110,26 +111,33 @@
             };
 
             function getRandomRotationGroteWijzer() {
+                var newUur = 0;
                 tijdStip = Math.random() * (60 * 24);
                 randomMinuutVanDeDag = Math.floor(tijdStip / 2);
-                uur = Math.floor(randomMinuutVanDeDag / 60);
+                newUur = Math.floor(randomMinuutVanDeDag / 60);
                 tussenBerekening = Math.floor(randomMinuutVanDeDag / 60) * 60;
                 minuten = randomMinuutVanDeDag - tussenBerekening;
                 if (uur == 0) {
                     uur = 12;
                 }
-                return uur;
+                if (newUur == 0) {
+                    newUur = 12;
+                }
+                if (newUur == uur) {
+                    getRandomRotationGroteWijzer();
+                }
+                return newUur;
             };
 
-            function wijzers () {
+            function wijzers() {
                 tijdStip = Math.random() * (60 * 24);
                 randomUurVanDeDag = Math.floor(tijdStip / 60);
                 randomMinuutVanDeDag = Math.floor(tijdStip / 2);
                 percentageKleineWijzer = Math.round((randomMinuutVanDeDag / 720) * 100);
                 uur = Math.floor(randomMinuutVanDeDag / 60);
-                kleineWijzer = (360 / 100) * percentageKleineWijzer;       
+                kleineWijzer = (360 / 100) * percentageKleineWijzer;
 
-                tussenBerekening = Math.floor(randomMinuutVanDeDag / 60) * 60;       
+                tussenBerekening = Math.floor(randomMinuutVanDeDag / 60) * 60;
                 minuten = randomMinuutVanDeDag - tussenBerekening;
                 percentageGroteWijzer = Math.round((minuten / 60) * 100);
 
@@ -138,12 +146,53 @@
                 setRotation($('.little.hand'), kleineWijzer);
                 setRotation($('.big.hand'), groteWijzer);
 
-                if (uur == 0){
+                if (uur == 0) {
                     uur = 12;
                 }
-                
-                $("#antwoord1").empty();
-                $("#antwoord1").append("Het is " + uur + " uur en " + minuten + " minuten.");
+                if (minuten >= 16 && minuten <= 59) {
+                    uur = uur + 1;
+                    if (uur == 13) {
+                        uur = 1;
+                    }
+                    if (minuten >= 16 && minuten <= 29) {
+                        for (var tussenMinuten = 0; minuten <= 29; minuten++) {
+                            tussenMinuten++;
+                            $("#antwoord1").empty();
+                            $("#antwoord1").append("Het is " + tussenMinuten + " minuten voor half " + uur + ".");
+                        }
+                    }
+                    else if (minuten == 30) {
+                        $("#antwoord1").empty();
+                        $("#antwoord1").append("Het is half " + uur + ".");
+                    }
+                    else if (minuten >= 31 && minuten <= 44) {
+                        for (var tussenMinuten = 0; minuten <= 44; minuten++) {
+                            tussenMinuten++;
+                            $("#antwoord1").empty();
+                            $("#antwoord1").append("Het is " + tussenMinuten + " minuten over half " + uur + ".");
+                        }
+                    }
+                    else if (minuten == 45) {
+                        $("#antwoord1").empty();
+                        $("#antwoord1").append("Het is kwart voor " + uur + ".");
+                    }
+                    else if (minuten >= 46 && minuten <= 59) {
+                        for (var tussenMinuten = 0; minuten <= 59; minuten++) {
+                            tussenMinuten++;
+                            $("#antwoord1").empty();
+                            $("#antwoord1").append("Het is " + tussenMinuten + " minuten voor " + uur + ".");
+                        }
+                    }
+                }
+                else if (minuten == 15) {
+                    $("#antwoord1").empty();
+                    $("#antwoord1").append("Het is kwart over " + uur + ".");
+                }
+                else if (minuten >= 1 && minuten <= 14) {
+                    $("#antwoord1").empty();
+                    $("#antwoord1").append("Het is " + minuten + " minuten over " + uur + ".");
+                }
+
                 $("#antwoord2").empty();
                 $("#antwoord2").append("Het is " + getRandomRotationGroteWijzer() + " uur en " + getRandomRotationKleineWijzer() + " minuten.");
                 $("#antwoord3").empty();
@@ -151,7 +200,6 @@
                 $("#antwoord4").empty();
                 $("#antwoord4").append("Het is " + getRandomRotationGroteWijzer() + " uur en " + getRandomRotationKleineWijzer() + " minuten.");
             };
-
 
             $("#zieAntwoord").click(function () {
                 //Divs en buttons properties veranderen.
