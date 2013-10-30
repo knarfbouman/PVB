@@ -28,6 +28,23 @@ namespace ToetsendRekenen
                 int aantalvragen = Convert.ToInt16(Session["aantalvragen"]);
                 int aantalvragengoed = Convert.ToInt16(Session["aantalvragengoed"]);
                 lblgoed.Text =  aantalvragengoed + "/" + aantalvragen + " goed";
+                if (aantalvragengoed == 10 || aantalvragengoed > 10 && aantalvragengoed < 20)
+                {
+                    sterren.ImageUrl = "~/Images/ster.jpg";
+                }
+                if (aantalvragengoed == 20 || aantalvragengoed > 20 && aantalvragengoed < 30)
+                {
+                    sterren.ImageUrl = "~/Images/2sterren.jpg";
+                }
+                if (aantalvragengoed == 30 || aantalvragengoed > 30 && aantalvragengoed < 40)
+                {
+                    sterren.ImageUrl = "~/Images/ster.jpg";
+                }
+                if (aantalvragengoed == 40 || aantalvragengoed > 40 && aantalvragengoed < 50)
+                {
+                    sterren.ImageUrl = "~/Images/ster.jpg";
+                }
+                
             }
             else
             {
@@ -251,24 +268,36 @@ namespace ToetsendRekenen
             if (IsPostBack == true)
             {
                 int test = Convert.ToInt16(Session["goedantwoord"]);
-                if (Convert.ToInt16( RadioButtonList1.SelectedItem.ToString()) == test)
+
+                if (RadioButtonList1.SelectedIndex == -1)
                 {
-                    int aantalgoed = Convert.ToInt16(Session["aantalvragengoed"]);
-                    aantalgoed++;
-                    Session["aantalvragengoed"] = aantalgoed;
-                }
-                int aantalvragen = Convert.ToInt16(Session["aantalvragen"]);
-                aantalvragen++;
-                Session["aantalvragen"] = aantalvragen;
-                lblvragen.Text = "Vraag " + aantalvragen + " van 50";
-                RadioButtonList1.SelectedItem.Selected = false;
-                if (aantalvragen < 50)
-                {
-                    Response.Redirect("Getallenlijn.aspx");
+                    lblerror.Visible = true;
+                    lblerror.Text = "Voer een antwoord in!";
+                    
+                    
                 }
                 else
                 {
-                    Response.Redirect("Leerlingresultaat.aspx");
+
+                    if (Convert.ToInt16(RadioButtonList1.SelectedItem.ToString()) == test)
+                    {
+                        int aantalgoed = Convert.ToInt16(Session["aantalvragengoed"]);
+                        aantalgoed++;
+                        Session["aantalvragengoed"] = aantalgoed;
+                    }
+                    int aantalvragen = Convert.ToInt16(Session["aantalvragen"]);
+                    aantalvragen++;
+                    Session["aantalvragen"] = aantalvragen;
+                    lblvragen.Text = "Vraag " + aantalvragen + " van 50";
+                    RadioButtonList1.SelectedItem.Selected = false;
+                    if (aantalvragen < 50)
+                    {
+                        Response.Redirect("Getallenlijn.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("Leerlingresultaat.aspx");
+                    }
                 }
             }
         }

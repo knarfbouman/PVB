@@ -3,8 +3,10 @@
     <link href="Stylesheets/inhoud.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <img src="Images/ster.jpg;" id ="ster" />
+    &nbsp;<br />
+    <asp:Image ID="sterren" runat="server" />
     <br />
+    
     <div id="getallenlijnimage">
     <img id="getallenlijn" src="Images/Goodguygetallenlijn.png" />
     </div>
@@ -37,4 +39,5 @@
     <asp:Label ID="lblvragen" runat="server" Text=""></asp:Label>
     <br />
     <asp:Label ID="lblgoed" runat="server" Text=""></asp:Label>
+    <asp:Label ID="lblerror" runat="server" ForeColor="#CC0000"></asp:Label>
     </asp:Content>
