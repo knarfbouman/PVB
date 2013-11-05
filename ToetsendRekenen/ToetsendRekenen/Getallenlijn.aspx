@@ -35,6 +35,7 @@
     <asp:RadioButtonList ID="RadioButtonList1" runat="server">
             </asp:RadioButtonList>
     <asp:Button ID="nextbutton" runat="server" Text="Volgende" OnClick="nextbutton_Click" />
+    <asp:Button ID="Resultatenbutton" runat="server" Text="Resultaat" Enabled="False" OnClick="Resultatenbutton_Click" Visible="False"  />
     <br />
     <asp:Label ID="lblvragen" runat="server" Text=""></asp:Label>
     <br />
